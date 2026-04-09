@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - KK Profiling</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dashboard-body">
+
+    <header class="top-nav">
+        <div class="logo-brand">
+            <img src="images/logo.png" alt="SK Logo">
+            <h2>KK Profiling Management System</h2>
+        </div>
+        <div class="user-actions">
+            <button class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
+            <div class="user-profile-icon"></div>
+        </div>
+    </header>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <nav>
+                <a href="#" class="nav-item active"><i class="fa-solid fa-house"></i> Dashboard</a>
+                <a href="youth-profiles.html" class="nav-item"><i class="fa-solid fa-users"></i> Youth Profiles</a>
+                <a href="#" class="nav-item"><i class="fa-solid fa-calendar-days"></i> Events</a>
+                <a href="#" class="nav-item"><i class="fa-solid fa-gear"></i> Settings</a>
+                <a href="#" class="nav-item"><i class="fa-solid fa-sitemap"></i> Organization</a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <div class="welcome-banner">
+                <div class="banner-text">
+                    <h1>Welcome to KK Profiling!</h1>
+                    <p>Manage youth data efficiently.</p>
+                </div>
+            </div>
+
+            <h3 class="section-title">Youth profiling statistics and analyticss</h3>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <span>Total Registered Youth</span>
+                        <strong>18</strong>
+                    </div>
+                    <i class="fa-solid fa-users icon-blue"></i>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <span>In School Youth (ISY)</span>
+                        <strong>8</strong>
+                    </div>
+                    <i class="fa-solid fa-graduation-cap icon-green"></i>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <span>Working Youth</span>
+                        <strong>4</strong>
+                    </div>
+                    <i class="fa-solid fa-briefcase icon-purple"></i>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-info">
+                        <span>Out of School Youth (OSY)</span>
+                        <strong>6</strong>
+                    </div>
+                    <i class="fa-solid fa-person-circle-exclamation icon-red"></i>
+                </div>
+            </div>
+
+            <div class="charts-row">
+                <div class="chart-container">
+                    <h3>Age Distribution</h3>
+                    <canvas id="ageChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Status Distribution</h3>
+                    <canvas id="statusChart"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

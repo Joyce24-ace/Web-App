@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KK Profiling Login</title>
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="login-bg">
+    <div class="wrapper">
+        <div class="title-container">
+            <div class="title-card">
+                <h1>KK <span>(Katipunan ng Kabataan)</span></h1>
+                <h2>Profiling Management System</h2>
+            </div>
+        </div>
+
+        <div class="login-container">
+            <div class="login-card">
+                <div class="logo-area">
+                    <img src="../images/logo.png" alt="SK Logo">
+                </div>
+                
+                <form id="loginForm">
+                    <div class="input-pill">
+                        <i class="fa-regular fa-circle-user"></i>
+                        <input type="text" placeholder="Username" id="user" required>
+                    </div>
+
+                    <div class="input-pill">
+                        <i class="fa-solid fa-lock-open"></i>
+                        <input type="password" placeholder="Password" id="pass" required>
+                        <i class="fa-regular fa-eye"></i>
+                    </div>
+
+                    <div class="remember-section">
+                        <input type="checkbox" id="rem">
+                        <label for="rem">Remember me.</label>
+                    </div>
+
+                    <button type="submit" class="teal-btn">Login</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
