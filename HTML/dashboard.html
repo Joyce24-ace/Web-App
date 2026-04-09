@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KK Profiling - Dashboard</title>
     <link rel="stylesheet" href="../CSS/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 <body class="dashboard-body">
 
@@ -111,15 +112,90 @@
 
         </div>
 
+        <div class="insight-item">
+            <i class="fa-solid fa-user-minus icon-blue"></i>
+            <div>
+                <strong>Out of School Youth</strong>
+                <p><span id="support-pct">0%</span> are currently enrolled</p>
+            </div>
+
+        </div>
+
+
+        <div class="insight-item">
+            <i class="fa-solid fa-users-rectangle icon-green"></i>
+            <div>
+                <strong>Age Range</strong>
+                <p><span id="support-pct">0%</span> Most youth are in the 19-21 age bracket</p>
+            </div>
+
+        </div>
+
+        
+
+
     </div>
 
 </div>
 
- </div>
+
 
 </main>
 
+
+<div id="youth-profiles-content" style="display: none;">
+        <div class="records-header">
+            <h3>Youth Records</h3>
+            <div class="action-buttons">
+                <button class="btn-new-year"><i class="fa-solid fa-calendar-check"></i> New Year</button>
+                <button class="btn-add-youth"><i class="fa-solid fa-plus"></i> Add New Youth</button>
+            </div>
+        </div>
+
+        <div class="filter-card">
+            <div class="filter-row">
+                <div class="search-container">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Search by name or address..">
+                </div>
+                <div class="filter-group">
+                    <select class="status-select">
+                        <option>All Status</option>
+                        <option>ISY</option>
+                        <option>OSY</option>
+                    </select>
+                    <input type="text" class="year-input" value="Year 2024">
+                </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <p style="color: #666;">Showing 0 of 0 profiles</p>
+                <button class="btn-export"><i class="fa-solid fa-file-export"></i> Export to CSV</button>
+            </div>
+        </div>
+
+        <table class="youth-records-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Status</th>
+                    <th>Address</th>
+                    <th>Contact</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="youth-list">
+                </tbody>
+        </table>
+    </div>
+</div>
+
+
+ </div>
+
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../JAVASCRIPT/script.js"></script>
 
 </body>
 
