@@ -323,11 +323,12 @@
 
 
 
+
 /* --- YOUTH RECORDS FINAL DESIGN --- */
 
-/* Parent Container Fix */
+
 #youth-profiles-content {
-    flex: 1; /* Allows it to grow next to the sidebar */
+    flex: 1; 
     padding: 30px;
     background-color: #e9ecef;
     min-height: 100vh;
@@ -366,6 +367,7 @@
 
 .btn-new-year { background-color: #40c057; }
 .btn-add-youth { background-color: #4dabf7; }
+
 
 /* Filter Card: The White Box */
 .filter-card {
@@ -451,3 +453,29 @@
 .view-icon { color: #339af0; margin-right: 12px; }
 .edit-icon { color: #40c057; margin-right: 12px; }
 .delete-icon { color: #fa5252; }
+
+
+
+/* for adding youth profiles */
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #495057;
+}
+
+#add-youth-form .year-input, 
+#add-youth-form .status-select {
+    margin-bottom: 15px;
+    border: 1px solid #ced4da;
+    transition: border-color 0.2s;
+}
+
+#add-youth-form .year-input:focus {
+    border-color: #4dabf7;
+    outline: none;
+}
+
+/* end of youth records design */
+

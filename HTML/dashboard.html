@@ -189,8 +189,116 @@
                 </tbody>
         </table>
     </div>
+
+
+<div id="add-youth-view" style="display: none; flex: 1; padding: 30px;">
+    <div class="records-header">
+        <h3><i class="fa-solid fa-user-plus"></i> New Youth Profile Registration</h3>
+        <button class="btn-export" id="back-to-list" style="background-color: #6c757d;">
+            <i class="fa-solid fa-arrow-left"></i> Back to Records
+        </button>
+    </div>
+
+    <div class="filter-card">
+        <form id="add-youth-form">
+            <h4 style="margin-bottom: 15px; color: var(--primary-teal); border-bottom: 1px solid #eee; padding-bottom: 5px;">Personal Information</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" class="year-input" style="width:100%; text-align:left;" required>
+                </div>
+                <div class="form-group">
+                    <label>Middle Name</label>
+                    <input type="text" class="year-input" style="width:100%; text-align:left;">
+                </div>
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" class="year-input" style="width:100%; text-align:left;" required>
+                </div>
+                <div class="form-group">
+                    <label>Age</label>
+                    <input type="number" class="year-input" style="width:100%; text-align:left;" required>
+                </div>
+                <div class="form-group">
+                    <label>Birthdate</label>
+                    <input type="date" class="year-input" style="width:100%; text-align:left;" required>
+                </div>
+                <div class="form-group">
+                    <label>Sex</label>
+                    <select class="year-input" style="width:100%;">
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+            </div>
+
+            <h4 style="margin-bottom: 15px; color: var(--primary-teal); border-bottom: 1px solid #eee; padding-bottom: 5px;">Status & Background</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
+                <div class="form-group">
+                    <label>Civil Status</label>
+                    <select class="year-input" style="width:100%;">
+                        <option>Single</option>
+                        <option>Married</option>
+                        <option>Widowed</option>
+                        <option>Separated</option>
+                        <option>Live-in</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Educational Background</label>
+                    <select class="year-input" style="width:100%;">
+                        <option>Elementary Level/Grad</option>
+                        <option>High School Level/Grad</option>
+                        <option>Vocational Grad</option>
+                        <option>College Level/Grad</option>
+                        <option>Masteral/Doctorate</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Youth Classification</label>
+                    <select class="year-input" style="width:100%;">
+                        <option>In School Youth</option>
+                        <option>Out of School Youth</option>
+                        <option>Working Youth</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Specific Needs</label>
+                    <select class="year-input" style="width:100%;">
+                        <option>None</option>
+                        <option>Person with Disability</option>
+                        <option>Indigenous People</option>
+                        <option>Children in Conflict with Law</option>
+                    </select>
+                </div>
+            </div>
+
+            <h4 style="margin-bottom: 15px; color: var(--primary-teal); border-bottom: 1px solid #eee; padding-bottom: 5px;">Location & Contact</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                <div class="form-group">
+                    <label>Contact Number</label>
+                    <input type="text" class="year-input" style="width:100%; text-align:left;" placeholder="09xxxxxxxxx">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" class="year-input" style="width:100%; text-align:left;">
+                </div>
+                <div class="form-group" style="grid-column: span 2;">
+                    <label>Complete Address (Brgy, Municipality, Province)</label>
+                    <input type="text" class="year-input" style="width:100%; text-align:left;">
+                </div>
+            </div>
+
+            <div style="margin-top: 30px; display: flex; justify-content: flex-end; gap: 12px;">
+                <button type="reset" class="btn-new-year" style="background-color: #adb5bd;">Clear All</button>
+                <button type="submit" class="btn-add-youth" style="padding: 12px 30px;">Register Youth</button>
+            </div>
+        </form>
+    </div>
 </div>
 
+
+</div>
 
  </div>
 
