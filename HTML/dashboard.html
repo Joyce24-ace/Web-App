@@ -10,6 +10,7 @@
 </head>
 <body class="dashboard-body">
 
+
     <header class="main-header">
         <div class="header-left">
             <img src="../images/logo.png" alt="KK Logo" class="nav-logo">
@@ -298,10 +299,70 @@
     </div>
 </div>
 
+<div id="events-view" style="display: none; flex: 1; padding: 30px;">
+    <div class="records-header">
+        <h3 class="records-title">Programs & Activities</h3>
+        <button class="btn-add-youth" id="btn-show-add-event" style="background-color: #5bc0de;">
+            <i class="fa-solid fa-plus"></i> Add Event
+        </button>
+    </div>
+
+    <div class="filter-card">
+        <div class="search-container" style="max-width: 450px; margin-bottom: 20px;">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="event-search-input" placeholder="Search events...">
+        </div>
+        
+        <div id="dynamic-event-list" style="display: flex; flex-direction: column; gap: 15px;">
+            <p id="no-events-msg" style="text-align:center; color:#888; padding:20px;">No events added yet.</p>
+        </div>
+    </div>
+</div>
+
+<div id="add-event-form-view" style="display: none; flex: 1; padding: 30px;">
+    <div class="records-header">
+        <h3><i class="fa-solid fa-calendar-plus"></i> Add New Program/Activity</h3>
+        <button class="btn-export" id="btn-back-to-events" style="background-color: #6c757d;">
+            <i class="fa-solid fa-arrow-left"></i> Back to List
+        </button>
+    </div>
+
+    <div class="filter-card">
+        <form id="new-event-form">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                <div class="form-group" style="grid-column: span 2;">
+                    <label>Event Title</label>
+                    <input type="text" id="event-title" class="year-input" style="width:100%; text-align:left;" required>
+                </div>
+                <div class="form-group">
+                    <label>Event Date</label>
+                    <input type="date" id="event-date" class="year-input" style="width:100%; text-align:left;" required>
+                </div>
+                <div class="form-group">
+                    <label>Cover Photo (URL or File)</label>
+                    <input type="text" id="event-img" class="year-input" style="width:100%; text-align:left;" placeholder="Enter image URL">
+                </div>
+                <div class="form-group" style="grid-column: span 2;">
+                    <label>Description</label>
+                    <textarea id="event-desc" class="year-input" style="width:100%; height:100px; text-align:left; padding:10px;" required></textarea>
+                </div>
+            </div>
+            <div style="margin-top: 30px; display: flex; justify-content: flex-end; gap: 12px;">
+                <button type="reset" class="btn-new-year" style="background-color: #adb5bd;">Clear</button>
+                <button type="submit" class="btn-add-youth" style="background-color: #4dabf7;">Post Activity</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
 
 </div>
 
- </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../JAVASCRIPT/script.js"></script>

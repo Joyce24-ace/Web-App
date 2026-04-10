@@ -479,3 +479,12 @@
 
 /* end of youth records design */
 
+#add-event-form textarea.year-input {
+    resize: none; 
+    border-radius: 12px;
+}
+
+#add-event-form label {
+    color: #495057;
+    font-size: 0.9rem;
+}
