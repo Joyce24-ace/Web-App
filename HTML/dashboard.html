@@ -32,6 +32,7 @@
             <div class="nav-item"><i class="fa-solid fa-sitemap"></i> Organization</div>
         </nav>
 
+
         <main class="main-content">
             <div class="welcome-banner">
                 <div class="banner-overlay">
@@ -72,8 +73,6 @@
                     </div>
                 </div>
             </div>
-
-
 
             <div class="charts-grid">
                 <div class="chart-box">
@@ -133,18 +132,13 @@
 
         </div>
 
-        
-
-
     </div>
 
 </div>
 
-
-
 </main>
 
-
+<!-- Youth Profile DIV -->
 <div id="youth-profiles-content" style="display: none;">
         <div class="records-header">
             <h3>Youth Records</h3>
@@ -190,9 +184,75 @@
             <tbody id="youth-list">
                 </tbody>
         </table>
+</div>
+
+
+<!-- New year button functionality page -->
+
+<div id="new-year-view" style="display: none; flex: 1; padding: 30px;">
+    <div class="records-header">
+        <h3 class="records-title"><i class="fa-solid fa-calendar-plus"></i> Initialize New Profiling Year</h3>
+        <button class="btn-export" id="back-from-new-year" style="background-color: #6c757d;">
+            <i class="fa-solid fa-arrow-left"></i> Back to Records
+        </button>
     </div>
 
+    <div class="filter-card" style="max-width: 900px; margin: 0 auto; background: white; padding: 40px; border-radius: 15px;">
+        <div style="background-color: #eef7ff; border: 1px solid #d0e8ff; padding: 25px; border-radius: 12px; margin-bottom: 25px;">
+            <h4 style="color: #003a70; margin-bottom: 12px; font-size: 1.1rem;">Starting a New Profiling Year</h4>
+            <p style="font-size: 0.95rem; color: #444; line-height: 1.6; margin-bottom: 10px;">
+                Creating a new profiling year will allow you to start fresh data collection for 2026. This is typically done at the beginning of each calendar year.
+            </p>
+            <p style="font-size: 0.95rem; color: #444;">
+                Previous years' data will be preserved and can be accessed anytime using the year selector.
+            </p>
+        </div>
 
+        <div class="form-group" style="margin-bottom: 25px;">
+            <label style="display: block; margin-bottom: 10px; font-weight: bold; color: #333;">New Year</label>
+            <input type="text" class="year-input" style="width: 100%; text-align: left; padding: 12px; border: 1px solid #ddd;" value="2025" id="new-year-input">
+        </div>
+
+        <div style="background-color: #fffdf0; border: 1px solid #ffeeba; padding: 25px; border-radius: 12px; margin-bottom: 30px;">
+            <h5 style="color: #856404; margin-bottom: 12px; font-size: 1rem;">Important Notes:</h5>
+            <ul style="list-style-type: none; padding: 0; font-size: 0.95rem; color: #555;">
+                <li style="margin-bottom: 10px; display: flex; align-items: center;">
+                    <span style="color: #f39c12; margin-right: 10px;">•</span> All new records will be tagged with the year 2026
+                </li>
+                <li style="margin-bottom: 10px; display: flex; align-items: center;">
+                    <span style="color: #f39c12; margin-right: 10px;">•</span> Previous years' data remains accessible
+                </li>
+                <li style="display: flex; align-items: center;">
+                    <span style="color: #f39c12; margin-right: 10px;">•</span> You can switch between years anytime using the year selector
+                </li>
+            </ul>
+        </div>
+
+        <div style="margin-bottom: 25px; padding: 20px; background-color: #f8f9fa; border-radius: 12px; border: 1px solid #e9ecef;">
+    <label style="display: flex; align-items: flex-start; cursor: pointer; gap: 12px; font-weight: 500; color: #333;">
+        <input type="checkbox" id="retain-data-check" style="width: 18px; height: 18px; margin-top: 3px; cursor: pointer;">
+        <div>
+            <span>Retain and carry over previous data to Year 2026?</span>
+            <p style="margin-top: 5px; font-weight: 400; font-size: 0.85rem; color: #666; line-height: 1.4;">
+                Checking this will automatically copy all current youth profiles into the new year. If left unchecked, the records table will start empty for 2026.
+            </p>
+        </div>
+    </label>
+</div>
+
+        <div style="display: flex; gap: 15px;">
+            <button class="btn-add-youth" id="confirm-create-year" style="background-color: #0d6efd; padding: 14px 28px; border: none; font-weight: 500;">
+                <i class="fa-solid fa-calendar-check"></i> Create Year 2026
+            </button>
+            <button class="btn-new-year" id="cancel-year-action" style="background-color: #e9ecef; color: #495057; border: none; padding: 14px 28px;">Cancel</button>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!-- adding youth -->
 <div id="add-youth-view" style="display: none; flex: 1; padding: 30px;">
     <div class="records-header">
         <h3><i class="fa-solid fa-user-plus"></i> New Youth Profile Registration</h3>
@@ -299,6 +359,8 @@
     </div>
 </div>
 
+
+<!--events -->
 <div id="events-view" style="display: none; flex: 1; padding: 30px;">
     <div class="records-header">
         <h3 class="records-title">Programs & Activities</h3>
@@ -319,6 +381,8 @@
     </div>
 </div>
 
+
+<!-- add event-->
 <div id="add-event-form-view" style="display: none; flex: 1; padding: 30px;">
     <div class="records-header">
         <h3><i class="fa-solid fa-calendar-plus"></i> Add New Program/Activity</h3>
@@ -355,12 +419,160 @@
     </div>
 </div>
 
+<div id="settings-view" style="display: none; flex: 1; padding: 30px;">
+    <h2 class="section-title" style="margin-top: 0;">Settings & Help</h2>
+    <p style="color: #666; margin-bottom: 20px;">Learn how to use the system and find answers to common questions.</p>
+
+    <div class="settings-tabs" style="display: flex; background: white; border-radius: 10px 10px 0 0; border: 1px solid #ddd; border-bottom: none;">
+        <div class="tab-item active" id="tab-guide" style="flex: 1; padding: 15px; text-align: center; cursor: pointer; border-right: 1px solid #eee; color: #0d6efd; font-weight: bold;">
+            <i class="fa-solid fa-book-open"></i> User's Guide
+        </div>
+        <div class="tab-item" id="tab-faq" style="flex: 1; padding: 15px; text-align: center; cursor: pointer; color: #666;">
+            <i class="fa-solid fa-circle-question"></i> FAQ's
+        </div>
+    </div>
+
+    <div class="settings-content-box" style="background: white; border: 1px solid #ddd; border-radius: 0 0 10px 10px; padding: 30px;">
+        
+        <div id="guide-content">
+            <h4 style="margin-bottom: 10px;">How to use the SK Profiling Management System</h4>
+            <p style="font-size: 0.9rem; color: #555; margin-bottom: 25px;">This guide will help you navigate and utilize all features of the KK Profiling Management System effectively.</p>
+            
+            <div style="background-color: #f8f9fa; padding: 25px; border-radius: 12px;">
+                <h5 style="font-size: 1.1rem; margin-bottom: 15px;">Getting Started</h5>
+                <ol style="line-height: 2; color: #333; padding-left: 20px;">
+                    <li>Log in using your assigned username and password.</li>
+                    <li>You will be directed to the Dashboard showing the youth statistics.</li>
+                    <li>Use the sidebar navigation to access different sections.</li>
+                    <li>Click Logout in the top right corner when finished.</li>
+                </ol>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 25px;">
+        <section>
+            <h5 style="color: #0d6efd; font-size: 1.1rem; margin-bottom: 10px;">Dashboard</h5>
+            <p style="font-size: 0.95rem; margin-bottom: 8px;">The Dashboard provides a quick overview of your barangay's youth data:</p>
+            <ul style="line-height: 1.8; color: #444; padding-left: 20px; font-size: 0.9rem;">
+                <li>View total youth count and breakdown by status (Students, Working, Out of School)</li>
+                <li>See age distribution charts to understand youth demographics</li>
+                <li>Check gender distribution and key insights</li>
+                <li>Export reports by clicking the "Export Report" button</li>
+            </ul>
+        </section>
+
+        <section>
+            <h5 style="color: #0d6efd; font-size: 1.1rem; margin-bottom: 10px;">Youth Records Management</h5>
+            <p style="font-size: 0.95rem; margin-bottom: 8px;">This is where you manage all youth profiles:</p>
+            
+            <strong style="font-size: 0.9rem; display: block; margin-top: 10px;">Adding a New Youth Profile:</strong>
+            <ol style="line-height: 1.8; color: #444; padding-left: 20px; font-size: 0.9rem;">
+                <li>Click "Add New Youth" button</li>
+                <li>Fill in all required fields marked with *</li>
+                <li>Select the appropriate status (Student, Working, or Out of School)</li>
+                <li>If status is "Working", provide occupation details</li>
+                <li>Click "Save Profile" to add the record</li>
+            </ol>
+
+            <strong style="font-size: 0.9rem; display: block; margin-top: 10px;">Searching and Filtering:</strong>
+            <ul style="line-height: 1.8; color: #444; padding-left: 20px; font-size: 0.9rem;">
+                <li>Use the search bar to find youth by name or address</li>
+                <li>Use the filter dropdown to show specific status groups</li>
+            </ul>
+        </section>
+
+        <section>
+            <h5 style="color: #0d6efd; font-size: 1.1rem; margin-bottom: 10px;">Events Management</h5>
+            <p style="font-size: 0.95rem; margin-bottom: 8px;">Create and manage SK events and activities:</p>
+            <ol style="line-height: 1.8; color: #444; padding-left: 20px; font-size: 0.9rem;">
+                <li>Click "Add Event" to create a new event</li>
+                <li>Enter event title, date, time, location, and description</li>
+                <li>Set the event status (Upcoming, Ongoing, or Completed)</li>
+                <li>Save the event</li>
+            </ol>
+        </section>
+
+                <section>
+            <h5 style="color: #0d6efd; font-size: 1.1rem; margin-bottom: 10px;">SK Organization Chart</h5>
+            <p style="font-size: 0.95rem; margin-bottom: 8px;">View the current SK officials and their contact information:</p>
+            <ol style="line-height: 1.8; color: #444; padding-left: 20px; font-size: 0.9rem;">
+                <li>Shows SK Chairperson at the top</li>
+                <li>Displays Secretary and Treasurer</li>
+                <li>Lists all SK Council Members with their assigned committees</li>
+                <li>Contact numbers are provided for easy communication</li>
+            </ol>
+        </section>
 
 
+                    <div style="background-color: #f8f9fa; padding: 25px; border-radius: 12px;">
+                <h5 style="font-size: 1.1rem; margin-bottom: 15px;">Best Practices</h5>
+                <ol style="line-height: 2; color: #333; padding-left: 20px;">
+                    <li>Conduct youth profiling at least once a year</li>
+                    <li>Update records immediately when youth status changes</li>
+                    <li>Always verify contact information for accuracy</li>
+                    <li>Export regular reports for SK meetings and planning sessions</li>
+                    <li>Keep event information up to date for community awareness</li>
+                    <li>Log out after each session to maintain security</li>
+            
+                    
+                </ol>
+            </div>
+
+
+    </div>
 
 
 
 </div>
+
+
+
+
+
+        <!-- frequently asked question-->
+        <div id="faq-content" style="display: none;">
+            <h4 style="margin-bottom: 20px;">Frequently Asked Questions</h4>
+            
+            <div class="faq-wrapper" style="display: flex; flex-direction: column; gap: 10px;">
+                <div class="faq-item">
+                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 1px solid #eee;">
+                        <span>What is KK Profiling Management System?</span>
+                        <i class="fa-solid fa-chevron-up"></i>
+                    </div>
+                    <div style="padding: 20px; font-size: 0.9rem; color: #555; line-height: 1.6; border: 1px solid #eee; border-top: none; border-radius: 0 0 8px 8px;">
+                        The KK Profiling System is a digital platform designed to help Sangguniang Kabataan (SK) officials efficiently collect, manage, and analyze youth data in the barangay. It replaces the traditional manual process with a modern web and mobile application.
+                    </div>
+                </div>
+
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 1px solid #eee; color: #333;">
+                    <span>Who can use this system?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 1px solid #eee; color: #333;">
+                    <span>How do I add a new profile?</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="preferences-card" style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #ddd; margin-bottom: 20px;">
+    <h4 style="margin-bottom: 15px;"><i class="fa-solid fa-sliders"></i> System Preferences</h4>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div>
+            <strong>Dark Mode</strong>
+            <p style="font-size: 0.85rem; color: #666; margin: 0;">Switch between light and dark themes</p>
+        </div>
+        <label class="switch" style="position: relative; display: inline-block; width: 50px; height: 24px;">
+            <input type="checkbox" id="dark-mode-toggle" style="opacity: 0; width: 0; height: 0;">
+            <span class="slider" style="position: absolute; cursor: pointer; top: 0; left: 0; right: 0; bottom: 0; background-color: #ccc; transition: .4s; border-radius: 24px;"></span>
+        </label>
+    </div>
+</div>
+
+
+</div>
+
+</div> <!-- closing div for dashboard beside the sidebar-->
 
 
 

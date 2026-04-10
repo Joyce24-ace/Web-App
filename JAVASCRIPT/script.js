@@ -6,6 +6,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const addYouthView = document.getElementById('add-youth-view');
     const eventsView = document.getElementById('events-view');
     const addEventFormView = document.getElementById('add-event-form-view');
+    const newYearView = document.getElementById('new-year-view');
+    const settingsView = document.getElementById('settings-view'); // Target the settings ID
 
     // --- Buttons ---
     const btnAddNewYouth = document.querySelector('.btn-add-youth');
@@ -13,9 +15,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnShowAddEvent = document.getElementById('btn-show-add-event');
     const btnBackToEvents = document.getElementById('btn-back-to-events');
     const newEventForm = document.getElementById('new-event-form');
+    
+    // New Year Buttons
+    const btnOpenNewYear = document.querySelector('.btn-new-year'); 
+    const btnBackFromNewYear = document.getElementById('back-from-new-year');
+    const btnCancelYear = document.getElementById('cancel-year-action');
+
+    // --- Settings Tab Elements ---
+    const tabGuide = document.getElementById('tab-guide');
+    const tabFaq = document.getElementById('tab-faq');
+    const guideContent = document.getElementById('guide-content');
+    const faqContent = document.getElementById('faq-content');
 
     // --- Mock Database for Events ---
-    // This stores your added events in memory for this session
     let eventsData = [
         {
             title: "Community Outreach Program",
@@ -33,8 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const text = item.innerText.trim();
 
-            // Hide all views first
-            [dashboard, profiles, addYouthView, eventsView, addEventFormView].forEach(view => {
+            // Hide ALL views first to prevent overlapping
+            const allViews = [dashboard, profiles, addYouthView, eventsView, addEventFormView, newYearView, settingsView];
+            allViews.forEach(view => {
                 if (view) view.style.display = 'none';
             });
 
@@ -44,7 +57,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 profiles.style.display = 'block';
             } else if (text.includes('Events')) {
                 eventsView.style.display = 'block';
-                renderEvents(); // Refresh the list every time we click Events
+                renderEvents(); 
+            } else if (text.includes('Settings')) {
+                if (settingsView) settingsView.style.display = 'block'; // Show settings
             }
         });
     });
@@ -64,6 +79,21 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    if (btnOpenNewYear) {
+        btnOpenNewYear.addEventListener('click', () => {
+            profiles.style.display = 'none';
+            newYearView.style.display = 'block';
+        });
+    }
+
+    const closeNewYearView = () => {
+        newYearView.style.display = 'none';
+        profiles.style.display = 'block';
+    };
+
+    if (btnBackFromNewYear) btnBackFromNewYear.addEventListener('click', closeNewYearView);
+    if (btnCancelYear) btnCancelYear.addEventListener('click', closeNewYearView);
+
     // --- Event View Toggles ---
     if (btnShowAddEvent) {
         btnShowAddEvent.addEventListener('click', () => {
@@ -79,12 +109,38 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // --- Settings Tab Logic (Now inside DOMContentLoaded) ---
+    if (tabGuide && tabFaq) {
+        tabGuide.addEventListener('click', () => {
+            // Update Tab styles
+            tabGuide.style.color = '#0d6efd';
+            tabGuide.style.fontWeight = 'bold';
+            tabFaq.style.color = '#666';
+            tabFaq.style.fontWeight = 'normal';
+
+            // Switch Content
+            guideContent.style.display = 'block';
+            faqContent.style.display = 'none';
+        });
+
+        tabFaq.addEventListener('click', () => {
+            // Update Tab styles
+            tabFaq.style.color = '#0d6efd';
+            tabFaq.style.fontWeight = 'bold';
+            tabGuide.style.color = '#666';
+            tabGuide.style.fontWeight = 'normal';
+
+            // Switch Content
+            guideContent.style.display = 'none';
+            faqContent.style.display = 'block';
+        });
+    }
+
     // --- Dynamic Event Rendering ---
     function renderEvents() {
         const listContainer = document.getElementById('dynamic-event-list');
         if (!listContainer) return;
-
-        listContainer.innerHTML = ''; // Clear current list
+        listContainer.innerHTML = ''; 
 
         eventsData.forEach(event => {
             const eventCard = `
@@ -102,26 +158,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Form Submission Logic ---
+    // --- Event Form Submission ---
     if (newEventForm) {
         newEventForm.addEventListener('submit', (e) => {
-            e.preventDefault(); // Stop page refresh
-
-            // Capture form data
+            e.preventDefault(); 
             const newEvent = {
                 title: document.getElementById('event-title').value,
                 date: document.getElementById('event-date').value,
-                img: document.getElementById('event-img').value || '../images/default.jpg', // Default if empty
+                img: document.getElementById('event-img').value || '../images/default.jpg',
                 desc: document.getElementById('event-desc').value
             };
-
-            // Add to our list
             eventsData.unshift(newEvent); 
-            
-            // Clear form and go back
             newEventForm.reset();
             btnBackToEvents.click();
             renderEvents();
         });
     }
-});
+
+    // --- Dark Mode Logic ---
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+
+// Check for saved theme preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark') {
+    document.body.classList.add('dark-theme');
+    if (darkModeToggle) darkModeToggle.checked = true;
+}
+
+if (darkModeToggle) {
+    darkModeToggle.addEventListener('change', () => {
+        if (darkModeToggle.checked) {
+            document.body.classList.add('dark-theme');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.body.classList.remove('dark-theme');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+}
+
+
+}); // End of DOMContentLoaded
