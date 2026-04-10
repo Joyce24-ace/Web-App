@@ -419,6 +419,8 @@
     </div>
 </div>
 
+
+<!--Setting Page-->
 <div id="settings-view" style="display: none; flex: 1; padding: 30px;">
     <h2 class="section-title" style="margin-top: 0;">Settings & Help</h2>
     <p style="color: #666; margin-bottom: 20px;">Learn how to use the system and find answers to common questions.</p>
@@ -449,7 +451,9 @@
             </div>
 
             <div style="display: flex; flex-direction: column; gap: 25px;">
+
         <section>
+              <br>
             <h5 style="color: #0d6efd; font-size: 1.1rem; margin-bottom: 10px;">Dashboard</h5>
             <p style="font-size: 0.95rem; margin-bottom: 8px;">The Dashboard provides a quick overview of your barangay's youth data:</p>
             <ul style="line-height: 1.8; color: #444; padding-left: 20px; font-size: 0.9rem;">
@@ -459,6 +463,8 @@
                 <li>Export reports by clicking the "Export Report" button</li>
             </ul>
         </section>
+        
+       
 
         <section>
             <h5 style="color: #0d6efd; font-size: 1.1rem; margin-bottom: 10px;">Youth Records Management</h5>
@@ -503,19 +509,35 @@
         </section>
 
 
-                    <div style="background-color: #f8f9fa; padding: 25px; border-radius: 12px;">
-                <h5 style="font-size: 1.1rem; margin-bottom: 15px;">Best Practices</h5>
-                <ol style="line-height: 2; color: #333; padding-left: 20px;">
-                    <li>Conduct youth profiling at least once a year</li>
-                    <li>Update records immediately when youth status changes</li>
-                    <li>Always verify contact information for accuracy</li>
-                    <li>Export regular reports for SK meetings and planning sessions</li>
-                    <li>Keep event information up to date for community awareness</li>
-                    <li>Log out after each session to maintain security</li>
-            
-                    
-                </ol>
-            </div>
+<div style="background-color: #f8f9fa; padding: 25px; border-radius: 12px; margin-top: 20px;">
+    <h5 style="font-size: 1.1rem; margin-bottom: 15px;">Best Practices</h5>
+    <ul style="line-height: 2.2; color: #333; list-style-type: none; padding-left: 0;">
+        <li style="display: flex; align-items: center; margin-bottom: 8px;">
+            <i class="fa-solid fa-check" style="color: #2ecc71; margin-right: 12px;"></i>
+            Conduct youth profiling at least once a year
+        </li>
+        <li style="display: flex; align-items: center; margin-bottom: 8px;">
+            <i class="fa-solid fa-check" style="color: #2ecc71; margin-right: 12px;"></i>
+            Update records immediately when youth status changes
+        </li>
+        <li style="display: flex; align-items: center; margin-bottom: 8px;">
+            <i class="fa-solid fa-check" style="color: #2ecc71; margin-right: 12px;"></i>
+            Always verify contact information for accuracy
+        </li>
+        <li style="display: flex; align-items: center; margin-bottom: 8px;">
+            <i class="fa-solid fa-check" style="color: #2ecc71; margin-right: 12px;"></i>
+            Export regular reports for SK meetings and planning sessions
+        </li>
+        <li style="display: flex; align-items: center; margin-bottom: 8px;">
+            <i class="fa-solid fa-check" style="color: #2ecc71; margin-right: 12px;"></i>
+            Keep event information up to date for community awareness
+        </li>
+        <li style="display: flex; align-items: center; margin-bottom: 8px;">
+            <i class="fa-solid fa-check" style="color: #2ecc71; margin-right: 12px;"></i>
+            Log out after each session to maintain security
+        </li>
+    </ul>
+</div>
 
 
     </div>
@@ -525,36 +547,149 @@
 </div>
 
 
-
-
-
         <!-- frequently asked question-->
-        <div id="faq-content" style="display: none;">
-            <h4 style="margin-bottom: 20px;">Frequently Asked Questions</h4>
+<div id="faq-content" style="display: none;">
+                <h4 style="margin-bottom: 20px;">Frequently Asked Questions</h4>
             
-            <div class="faq-wrapper" style="display: flex; flex-direction: column; gap: 10px;">
-                <div class="faq-item">
-                    <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 1px solid #eee;">
-                        <span>What is KK Profiling Management System?</span>
-                        <i class="fa-solid fa-chevron-up"></i>
-                    </div>
-                    <div style="padding: 20px; font-size: 0.9rem; color: #555; line-height: 1.6; border: 1px solid #eee; border-top: none; border-radius: 0 0 8px 8px;">
-                        The KK Profiling System is a digital platform designed to help Sangguniang Kabataan (SK) officials efficiently collect, manage, and analyze youth data in the barangay. It replaces the traditional manual process with a modern web and mobile application.
-                    </div>
-                </div>
+    <div class="faq-wrapper" style="display: flex; flex-direction: column; gap: 10px;">
+        <div class="faq-item">
+            <div class="faq-question" style="background: #f8f9fa; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 1px solid #eee; color: #333;">
+            <span>What is KK Profiling Management System?</span>
+            <i class="fa-solid fa-chevron-down toggle-icon"></i></div>
 
-                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 1px solid #eee; color: #333;">
-                    <span>Who can use this system?</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-                <div style="background: #f8f9fa; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 1px solid #eee; color: #333;">
-                    <span>How do I add a new profile?</span>
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-            </div>
+        <div class="faq-answer" style="display: none; padding: 20px; font-size: 0.9rem; color: #555; line-height: 1.6; border: 1px solid #eee; border-top: none; border-radius: 0 0 8px 8px;">
+            The KK Profiling System is a digital platform designed to help Sangguniang Kabataan (SK) officials efficiently collect, manage, and analyze youth data in the barangay. It replaces the traditional manual process with a modern web and mobile application.</div>
+        </div>
+
+    <div class="faq-item">
+        <div class="faq-question" style="background: #f8f9fa; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 1px solid #eee; color: #333;">
+            <span>Who can use this system?</span>
+            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+        </div>
+        <div class="faq-answer" style="display: none; padding: 20px; font-size: 0.9rem; color: #555; line-height: 1.6; border: 1px solid #eee; border-top: none; border-radius: 0 0 8px 8px;">
+            The system is designed for SK Chairpersons, SK Council Members, and designated System Administrators. Each user will have their own login credentials to access the system.
         </div>
     </div>
 
+    <div class="faq-item">
+        <div class="faq-question" style="background: #f8f9fa; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 1px solid #eee; color: #333;">
+            <span>Can I delete a youth Profile?</span>
+            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+        </div>
+        <div class="faq-answer" style="display: none; padding: 20px; font-size: 0.9rem; color: #555; line-height: 1.6; border: 1px solid #eee; border-top: none; border-radius: 0 0 8px 8px;">
+            Yes. In the Youth Records page, you can click the Edit icon to modify existing information or click the Delete icon to remove a profile. You can also view full details by clicking the Eye icon.
+        </div>
+    </div>
+
+
+    <div class="faq-item">
+        <div class="faq-question" style="background: #f8f9fa; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 1px solid #eee; color: #333;">
+            <span>How do I search for specific youth?</span>
+            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+        </div>
+        <div class="faq-answer" style="display: none; padding: 20px; font-size: 0.9rem; color: #555; line-height: 1.6; border: 1px solid #eee; border-top: none; border-radius: 0 0 8px 8px;">
+            Use the search bar in the Youth Records page to search by name or address. You can also filter records by status (Student, Working, or Out of School) using the dropdown filter.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" style="background: #f8f9fa; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 1px solid #eee; color: #333;">
+            <span>What data is shown on the dashboard?</span>
+            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+        </div>
+        <div class="faq-answer" style="display: none; padding: 20px; font-size: 0.9rem; color: #555; line-height: 1.6; border: 1px solid #eee; border-top: none; border-radius: 0 0 8px 8px;">
+            The Dashboard displays key statistics including total youth count, number of students, working youth, and out-of-school youth. It also shows charts for age distribution, status distribution, gender distribution, and key insights.
+        </div>
+    </div>
+
+
+    <div class="faq-item">
+        <div class="faq-question" style="background: #f8f9fa; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 1px solid #eee; color: #333;">
+            <span>How do I create an event?</span>
+            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+        </div>
+        <div class="faq-answer" style="display: none; padding: 20px; font-size: 0.9rem; color: #555; line-height: 1.6; border: 1px solid #eee; border-top: none; border-radius: 0 0 8px 8px;">
+            Navigate to the Events page, click "Add Event", fill in the event details (title, date, time, location, description, and status), then save. Events will be categorized as Upcoming or Past based on their status.
+        </div>
+    </div>
+
+
+
+    <div class="faq-item">
+        <div class="faq-question" style="background: #f8f9fa; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 1px solid #eee; color: #333;">
+            <span>Can I export the data?</span>
+            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+        </div>
+        <div class="faq-answer" style="display: none; padding: 20px; font-size: 0.9rem; color: #555; line-height: 1.6; border: 1px solid #eee; border-top: none; border-radius: 0 0 8px 8px;">
+            Yes. In the Dashboard, click the "Export Report" button to generate PDF or Excel reports. This feature allows you to share data during assemblies or planning sessions.
+        </div>
+    </div>
+
+
+    <div class="faq-item">
+        <div class="faq-question" style="background: #f8f9fa; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 1px solid #eee; color: #333;">
+            <span>Is my data secure?</span>
+            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+        </div>
+        <div class="faq-answer" style="display: none; padding: 20px; font-size: 0.9rem; color: #555; line-height: 1.6; border: 1px solid #eee; border-top: none; border-radius: 0 0 8px 8px;">
+            Yes. The system uses secure authentication and stores all data in a protected database. Only authorized SK officials with login credentials can access the system.
+        </div>
+    </div>
+
+
+    <div class="faq-item">
+        <div class="faq-question" style="background: #f8f9fa; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 1px solid #eee; color: #333;">
+            <span>What should I do if I forgot my password?</span>
+            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+        </div>
+        <div class="faq-answer" style="display: none; padding: 20px; font-size: 0.9rem; color: #555; line-height: 1.6; border: 1px solid #eee; border-top: none; border-radius: 0 0 8px 8px;">
+            Contact your System Administrator or SK Chairperson to reset your password. They have the authority to manage user accounts and credentials.
+        </div>
+    </div>
+
+
+    <div class="faq-item">
+        <div class="faq-question" style="background: #f8f9fa; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 1px solid #eee; color: #333;">
+            <span>Does the mobile app work offline?</span>
+            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+        </div>
+        <div class="faq-answer" style="display: none; padding: 20px; font-size: 0.9rem; color: #555; line-height: 1.6; border: 1px solid #eee; border-top: none; border-radius: 0 0 8px 8px;">
+           Yes. The mobile app (when available) can work offline during data collection. Once the device connects to the internet, all collected data will automatically sync to the web system.
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question" style="background: #f8f9fa; padding: 15px; border-radius: 8px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border: 1px solid #eee; color: #333;">
+            <span>How often should we update youth profiles?</span>
+            <i class="fa-solid fa-chevron-down toggle-icon"></i>
+        </div>
+        <div class="faq-answer" style="display: none; padding: 20px; font-size: 0.9rem; color: #555; line-height: 1.6; border: 1px solid #eee; border-top: none; border-radius: 0 0 8px 8px;">
+           It is recommended to conduct profiling at least once a year or whenever there are significant changes in youth status (e.g., graduation, employment, change of address).
+        </div>
+    </div>
+
+</div> <!-- end for fqs-wrapper-->
+            <br>
+            <div style="background-color: #f8f9fa; padding: 25px; border-radius: 12px;">
+                <h5 style="font-size: 1.1rem; margin-bottom: 15px;">Still Need Help?</h5>
+                <p style="font-size: 0.95rem; margin-bottom: 8px;">If you have questions that aren't answered here, please contact:</p>
+                <ul style="line-height: 2; color: #333; padding-left: 20px;">
+                    <li>Your SK Chairperson for operational questions</li>
+                    <li>Your System Administrator for technical issues</li>
+                    <li>EVSU-CC BSIT Team for system development support</li>
+                </ul>
+            </div>
+
+
+</div>  <!-- end for fqs-content-->
+
+
+
+</div>
+
+
+    <!--Dark Mode-->
+    <br>
     <div class="preferences-card" style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #ddd; margin-bottom: 20px;">
     <h4 style="margin-bottom: 15px;"><i class="fa-solid fa-sliders"></i> System Preferences</h4>
     <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -569,8 +704,100 @@
     </div>
 </div>
 
-
 </div>
+
+
+<!--Organizational chart-->
+<div id="organization-view" style="display: none; flex: 1; padding: 30px;">
+    <div class="records-header">
+        <h3 class="records-title"><i class="fa-solid fa-sitemap"></i> SK Council Organization</h3>
+        <p style="color: #666; font-size: 0.9rem;">View and manage the council structure.</p>
+    </div>
+
+    <div class="org-chart-wrapper" style="text-align: center; background: white; padding: 40px; border-radius: 12px; border: 1px solid #ddd; margin-bottom: 25px;">
+        
+        <div class="org-level level-1" style="margin-bottom: 40px;">
+            <div class="member-node chairperson" style="display: inline-block; position: relative; padding: 20px; border: 2px solid #003a70; background: #eef7ff; border-radius: 10px; width: 220px;">
+                <div class="avatar-holder" style="width: 80px; height: 80px; background: #ddd; border-radius: 50%; margin: 0 auto 15px auto; overflow: hidden;">
+                    <img src="../images/default-avatar.png" alt="Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h5 class="member-name" style="color: #0d6efd; margin: 0 0 5px 0;">HON. [NAME HERE]</h5>
+                <span class="member-role" style="background: #003a70; color: white; padding: 5px 12px; font-size: 0.75rem; border-radius: 4px;">SK CHAIRPERSON</span>
+                <i class="fa-solid fa-pen-to-square edit-member-icon" onclick="openEditModal(1)" style="position: absolute; top: 10px; right: 10px; cursor: pointer; color: #aaa;"></i>
+            </div>
+        </div>
+
+        <div style="width: 2px; height: 30px; background: #ddd; margin: -40px auto 10px auto;"></div>
+
+        <div class="org-level level-2" style="display: flex; justify-content: center; gap: 60px; margin-bottom: 40px;">
+            <div class="member-node secretary" style="position: relative; padding: 15px; border: 2px solid #003a70; background: #eef7ff; border-radius: 10px; width: 200px;">
+                <div class="avatar-holder" style="width: 70px; height: 70px; background: #ddd; border-radius: 50%; margin: 0 auto 10px auto;">
+                    <img src="../images/default-avatar.png" alt="Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h6 class="member-name" style="color: #0d6efd;">[NAME HERE]</h6>
+                <span class="member-role" style="background: #003a70; color: white; padding: 4px 10px; font-size: 0.7rem; border-radius: 4px;">SK SECRETARY</span>
+                <i class="fa-solid fa-pen-to-square edit-member-icon" onclick="openEditModal(2)" style="position: absolute; top: 8px; right: 8px; cursor: pointer; color: #aaa;"></i>
+            </div>
+            <div class="member-node treasurer" style="position: relative; padding: 15px; border: 2px solid #003a70; background: #eef7ff; border-radius: 10px; width: 200px;">
+                <div class="avatar-holder" style="width: 70px; height: 70px; background: #ddd; border-radius: 50%; margin: 0 auto 10px auto;">
+                    <img src="../images/default-avatar.png" alt="Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <h6 class="member-name" style="color: #0d6efd;">[NAME HERE]</h6>
+                <span class="member-role" style="background: #003a70; color: white; padding: 4px 10px; font-size: 0.7rem; border-radius: 4px;">SK TREASURER</span>
+                <i class="fa-solid fa-pen-to-square edit-member-icon" onclick="openEditModal(3)" style="position: absolute; top: 8px; right: 8px; cursor: pointer; color: #aaa;"></i>
+            </div>
+        </div>
+
+        <div style="width: 2px; height: 30px; background: #ddd; margin: -40px auto 10px auto;"></div>
+
+        <div class="org-level level-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 15px; max-width: 1100px; margin: 0 auto;">
+            <div class="member-node kagawad" style="position: relative; padding: 10px; border: 1px solid #ddd; background: #f8f9fa; border-radius: 8px; text-align: center;">
+                <div class="avatar-holder" style="width: 50px; height: 50px; background: #eee; border-radius: 50%; margin: 0 auto 8px auto;">
+                    <img src="../images/default-avatar.png" alt="Avatar" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <strong class="member-name" style="font-size: 0.85rem; color: #333;">[NAME]</strong>
+                <span class="member-role" style="display: block; font-size: 0.7rem; color: #777;">Kagawad 1</span>
+                <i class="fa-solid fa-pen-to-square edit-member-icon" onclick="openEditModal(4)" style="position: absolute; top: 5px; right: 5px; font-size: 0.75rem; cursor: pointer; color: #aaa;"></i>
+            </div>
+            <div class="member-node kagawad" style="position: relative; padding: 10px; border: 1px solid #ddd; background: #f8f9fa; border-radius: 8px; text-align: center;"><strong class="member-name" style="font-size: 0.85rem;">[NAME]</strong><span class="member-role" style="display: block; font-size: 0.7rem; color: #777;">Kagawad 2</span><i class="fa-solid fa-pen-to-square edit-member-icon" onclick="openEditModal(5)" style="position: absolute; top: 5px; right: 5px; font-size: 0.75rem; cursor: pointer; color: #aaa;"></i></div>
+            <div class="member-node kagawad" style="position: relative; padding: 10px; border: 1px solid #ddd; background: #f8f9fa; border-radius: 8px; text-align: center;"><strong class="member-name" style="font-size: 0.85rem;">[NAME]</strong><span class="member-role" style="display: block; font-size: 0.7rem; color: #777;">Kagawad 3</span><i class="fa-solid fa-pen-to-square edit-member-icon" onclick="openEditModal(6)" style="position: absolute; top: 5px; right: 5px; font-size: 0.75rem; cursor: pointer; color: #aaa;"></i></div>
+            <div class="member-node kagawad" style="position: relative; padding: 10px; border: 1px solid #ddd; background: #f8f9fa; border-radius: 8px; text-align: center;"><strong class="member-name" style="font-size: 0.85rem;">[NAME]</strong><span class="member-role" style="display: block; font-size: 0.7rem; color: #777;">Kagawad 4</span><i class="fa-solid fa-pen-to-square edit-member-icon" onclick="openEditModal(7)" style="position: absolute; top: 5px; right: 5px; font-size: 0.75rem; cursor: pointer; color: #aaa;"></i></div>
+            <div class="member-node kagawad" style="position: relative; padding: 10px; border: 1px solid #ddd; background: #f8f9fa; border-radius: 8px; text-align: center;"><strong class="member-name" style="font-size: 0.85rem;">[NAME]</strong><span class="member-role" style="display: block; font-size: 0.7rem; color: #777;">Kagawad 5</span><i class="fa-solid fa-pen-to-square edit-member-icon" onclick="openEditModal(8)" style="position: absolute; top: 5px; right: 5px; font-size: 0.75rem; cursor: pointer; color: #aaa;"></i></div>
+            <div class="member-node kagawad" style="position: relative; padding: 10px; border: 1px solid #ddd; background: #f8f9fa; border-radius: 8px; text-align: center;"><strong class="member-name" style="font-size: 0.85rem;">[NAME]</strong><span class="member-role" style="display: block; font-size: 0.7rem; color: #777;">Kagawad 6</span><i class="fa-solid fa-pen-to-square edit-member-icon" onclick="openEditModal(9)" style="position: absolute; top: 5px; right: 5px; font-size: 0.75rem; cursor: pointer; color: #aaa;"></i></div>
+            <div class="member-node kagawad" style="position: relative; padding: 10px; border: 1px solid #ddd; background: #f8f9fa; border-radius: 8px; text-align: center;"><strong class="member-name" style="font-size: 0.85rem;">[NAME]</strong><span class="member-role" style="display: block; font-size: 0.7rem; color: #777;">Kagawad 7</span><i class="fa-solid fa-pen-to-square edit-member-icon" onclick="openEditModal(10)" style="position: absolute; top: 5px; right: 5px; font-size: 0.75rem; cursor: pointer; color: #aaa;"></i></div>
+        </div>
+    </div>
+</div>
+
+<div id="edit-member-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
+    <div style="background: white; padding: 30px; border-radius: 12px; width: 450px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h4 style="margin: 0; color: #333;"><i class="fa-solid fa-user-pen"></i> Edit Member Details</h4>
+            <i class="fa-solid fa-xmark" id="close-modal" style="cursor: pointer; font-size: 1.2rem; color: #aaa;"></i>
+        </div>
+        <form id="edit-member-form">
+            <input type="hidden" id="edit-member-id">
+            <div class="form-group" style="margin-bottom: 15px;">
+                <label style="display: block; margin-bottom: 8px; font-weight: 500;">Name</label>
+                <input type="text" id="edit-member-name" class="year-input" style="width: 100%; text-align: left;" required>
+            </div>
+            <div class="form-group" style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; font-weight: 500;">Position/Committee</label>
+                <input type="text" id="edit-member-position" class="year-input" style="width: 100%; text-align: left;" required>
+            </div>
+            <div style="display: flex; justify-content: flex-end; gap: 10px;">
+                <button type="button" class="btn-new-year" id="btn-cancel-edit" style="background-color: #adb5bd;">Cancel</button>
+                <button type="submit" class="btn-add-youth" style="background-color: #0d6efd; padding: 10px 20px;">Save Changes</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+
+
 
 </div> <!-- closing div for dashboard beside the sidebar-->
 

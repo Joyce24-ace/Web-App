@@ -197,5 +197,27 @@ if (darkModeToggle) {
     });
 }
 
+// --- FAQ Accordion Logic ---
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const answer = question.nextElementSibling;
+            const icon = question.querySelector('.toggle-icon');
+
+            // Toggle the display of the answer
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+                if (icon) icon.classList.replace('fa-chevron-up', 'fa-chevron-down');
+                question.style.borderRadius = '8px'; 
+            } else {
+                answer.style.display = 'block';
+                if (icon) icon.classList.replace('fa-chevron-down', 'fa-chevron-up');
+                question.style.borderRadius = '8px 8px 0 0'; 
+            }
+        });
+    });
+
+
 
 }); // End of DOMContentLoaded
