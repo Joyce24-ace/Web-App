@@ -570,6 +570,7 @@
 
 .bold-text { font-weight: 500; }
 
+
 /* Toggle Slider Styling */
 .switch input:checked + .slider { background-color: #0d6efd; }
 .slider:before {
@@ -578,6 +579,7 @@
     transition: .4s; border-radius: 50%;
 }
 input:checked + .slider:before { transform: translateX(24px); }
+
 
 /* Dark Theme Variables */
 body.dark-theme {
@@ -600,3 +602,116 @@ body.dark-theme {
 .dark-theme .nav-item:hover { background-color: #333; }
 .dark-theme table { background-color: #2d2d2d; color: #fff; }
 .dark-theme th { background-color: #3d3d3d; color: #fff; }
+
+
+
+/* org chart */
+.profile-pic-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+} /* important do not dlete */
+
+
+
+
+/* Tree Connector Logic */
+.org-chart-wrapper {
+    width: 80%;
+    overflow-x: auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+}
+
+.org-tree ul {
+    padding-top: 20px; 
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.org-tree li {
+    float: left; text-align: center;
+    list-style-type: none;
+    position: relative;
+    padding: 20px 5px 0 5px;
+}
+
+/* Drawing the horizontal lines */
+.org-tree li::before, .org-tree li::after {
+    content: '';
+    position: absolute; top: 0; right: 50%;
+    border-top: 2px solid #1a5276; /* Dark blue line from your design */
+    width: 50%; height: 20px;
+}
+.org-tree li::after {
+    right: auto; left: 50%;
+    border-left: 2px solid #1a5276;
+}
+
+/* Remove connectors from single child or edges */
+.org-tree li:only-child::after, .org-tree li:only-child::before { display: none; }
+.org-tree li:only-child { padding-top: 0; }
+.org-tree li:first-child::before, .org-tree li:last-child::after { border: 0 none; }
+.org-tree li:last-child::before { border-right: 2px solid #1a5276; border-radius: 0 5px 0 0; }
+.org-tree li:first-child::after { border-radius: 5px 0 0 0; }
+
+
+/* Vertical connectors from parent */
+.org-tree ul ul::before {
+    content: '';
+    position: absolute; top: 0; left: 50%;
+    border-left: 2px solid #1a5276;
+    width: 0; height: 20px;
+}
+
+/* Card Styling to match your Image */
+.org-card {
+    display: inline-block;
+    width: 200px;
+}
+
+.profile-pic-wrapper {
+    width: 110px; height: 110px;
+    border-radius: 50%;
+    border: 3px solid #1a5276;
+    margin: 0 auto 10px;
+    background: #fff;
+    position: relative;
+}
+
+.profile-pic-wrapper.mini {
+    width: 75px; height: 75px;
+}
+
+.edit-pic-btn {
+    position: absolute; bottom: 0; right: 5px;
+    background: #00d2ff; color: #fff;
+    border: 2px solid #fff; border-radius: 50%;
+    width: 26px; height: 26px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+}
+
+.org-info {
+    border: 2px solid #1a5276;
+    border-radius: 2px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.org-name {
+    width: 100%; border: none; padding: 6px;
+    text-align: center; color: #1a5276;
+    font-weight: bold; font-size: 0.8rem;
+    outline: none;
+}
+
+.org-role {
+    display: block; background: #004a8d;
+    color: #fff; font-size: 0.7rem; padding: 5px 0;
+    font-weight: 600;
+}
+
+.member-node { width: 130px; }

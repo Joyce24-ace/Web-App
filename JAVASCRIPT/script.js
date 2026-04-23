@@ -7,7 +7,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const eventsView = document.getElementById('events-view');
     const addEventFormView = document.getElementById('add-event-form-view');
     const newYearView = document.getElementById('new-year-view');
-    const settingsView = document.getElementById('settings-view'); // Target the settings ID
+    const settingsView = document.getElementById('settings-view'); 
+    const organizationView = document.getElementById('organization-view');
 
     // --- Buttons ---
     const btnAddNewYouth = document.querySelector('.btn-add-youth');
@@ -15,6 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnShowAddEvent = document.getElementById('btn-show-add-event');
     const btnBackToEvents = document.getElementById('btn-back-to-events');
     const newEventForm = document.getElementById('new-event-form');
+   
+
     
     // New Year Buttons
     const btnOpenNewYear = document.querySelector('.btn-new-year'); 
@@ -46,7 +49,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const text = item.innerText.trim();
 
             // Hide ALL views first to prevent overlapping
-            const allViews = [dashboard, profiles, addYouthView, eventsView, addEventFormView, newYearView, settingsView];
+            const allViews = [dashboard, profiles, addYouthView, eventsView, addEventFormView, newYearView, settingsView, organizationView];
             allViews.forEach(view => {
                 if (view) view.style.display = 'none';
             });
@@ -60,6 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 renderEvents(); 
             } else if (text.includes('Settings')) {
                 if (settingsView) settingsView.style.display = 'block'; // Show settings
+            
+            } else if (text.includes('Organization')) { 
+                if (organizationView) organizationView.style.display = 'block';
             }
         });
     });
@@ -99,6 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnShowAddEvent.addEventListener('click', () => {
             eventsView.style.display = 'none';
             addEventFormView.style.display = 'block';
+            addEventFormView.scrollIntoView({ behavior: 'smooth' });
         });
     }
 
@@ -220,4 +227,66 @@ if (darkModeToggle) {
 
 
 
+    // --- Organizational Chart Edit Logic ---
+    let currentEditingNode = null; // We will track which box is being edited
+    const memberModal = document.getElementById('edit-member-modal');
+    const editForm = document.getElementById('edit-member-form');
+
+    // Function to open the modal and populate data
+    // Update the function signature to accept the 'icon' element
+    window.openEditModal = (icon) => {
+        // Find the specific node that was clicked
+        currentEditingNode = icon.closest('.member-node');
+        
+        // Get the current data from that specific box
+        const currentName = currentEditingNode.querySelector('.member-name').innerText;
+        const currentPosition = currentEditingNode.querySelector('.member-role').innerText;
+        const currentPhotoUrl = currentEditingNode.querySelector('.member-photo').src;
+
+        // Populate the Modal Fields
+        document.getElementById('edit-member-name').value = currentName;
+        document.getElementById('edit-member-position').value = currentPosition;
+        
+        // Add a hidden or simple text field for photo URL to your Modal HTML
+        if (document.getElementById('edit-member-photo-url')) {
+            document.getElementById('edit-member-photo-url').value = currentPhotoUrl;
+        }
+
+        // Show Modal
+        if(memberModal) memberModal.style.display = 'flex';
+    }
+
+    const hideModal = () => { if(memberModal) memberModal.style.display = 'none'; };
+
+    // --- Modal Back Buttons and Form Logic (KEEP THIS PART) ---
+    const closeModalBtn = document.getElementById('close-modal');
+    const cancelModalBtn = document.getElementById('btn-cancel-edit');
+    if(closeModalBtn) closeModalBtn.onclick = hideModal;
+    if(cancelModalBtn) cancelModalBtn.onclick = hideModal;
+    
+    // Save the new data back to the dynamic box
+    if(editForm) {
+        editForm.onsubmit = (e) => {
+            e.preventDefault();
+            
+            // Get values from the form inputs
+            const newName = document.getElementById('edit-member-name').value;
+            const newPosition = document.getElementById('edit-member-position').value;
+            const newPhotoUrl = document.getElementById('edit-member-photo-url') ? document.getElementById('edit-member-photo-url').value : "";
+
+            // Update the dynamic box we are currently editing
+            if (currentEditingNode) {
+                currentEditingNode.querySelector('.member-name').innerText = newName;
+                currentEditingNode.querySelector('.member-role').innerText = newPosition;
+                
+                if (currentEditingNode.querySelector('.member-photo') && newPhotoUrl) {
+                    currentEditingNode.querySelector('.member-photo').src = newPhotoUrl;
+                }
+            }
+
+            hideModal();
+        }
+    }
+
+    
 }); // End of DOMContentLoaded

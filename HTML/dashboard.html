@@ -685,12 +685,12 @@
 
 
 
-</div>
+</div><!-- end of settings-->
 
 
     <!--Dark Mode-->
     <br>
-    <div class="preferences-card" style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #ddd; margin-bottom: 20px;">
+<div class="preferences-card" style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #ddd; margin-bottom: 20px;">
     <h4 style="margin-bottom: 15px;"><i class="fa-solid fa-sliders"></i> System Preferences</h4>
     <div style="display: flex; justify-content: space-between; align-items: center;">
         <div>
@@ -704,99 +704,74 @@
     </div>
 </div>
 
-</div>
+</div><!-- end for setting-->
 
 
 <!--Organizational chart-->
 <div id="organization-view" style="display: none; flex: 1; padding: 30px;">
-    <div class="records-header">
-        <h3 class="records-title"><i class="fa-solid fa-sitemap"></i> SK Council Organization</h3>
-        <p style="color: #666; font-size: 0.9rem;">View and manage the council structure.</p>
-    </div>
+    <div class="org-chart-wrapper">
+        <div class="org-tree">
+            <ul>
+                <li>
+                    <div class="org-card">
+                        <div class="profile-pic-wrapper">
+                            <img src="../images/logo.png" alt="Chairperson">
+                            <button class="edit-pic-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                        </div>
+                        <div class="org-info">
+                            <input type="text" class="org-name" placeholder="Name of the Chairman">
+                            <span class="org-role">SK CHAIRPERSON</span>
+                        </div>
+                    </div>
 
-    <div class="org-chart-wrapper" style="text-align: center; background: white; padding: 40px; border-radius: 12px; border: 1px solid #ddd; margin-bottom: 25px;">
-        
-        <div class="org-level level-1" style="margin-bottom: 40px;">
-            <div class="member-node chairperson" style="display: inline-block; position: relative; padding: 20px; border: 2px solid #003a70; background: #eef7ff; border-radius: 10px; width: 220px;">
-                <div class="avatar-holder" style="width: 80px; height: 80px; background: #ddd; border-radius: 50%; margin: 0 auto 15px auto; overflow: hidden;">
-                    <img src="../images/default-avatar.png" alt="Avatar" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <h5 class="member-name" style="color: #0d6efd; margin: 0 0 5px 0;">HON. [NAME HERE]</h5>
-                <span class="member-role" style="background: #003a70; color: white; padding: 5px 12px; font-size: 0.75rem; border-radius: 4px;">SK CHAIRPERSON</span>
-                <i class="fa-solid fa-pen-to-square edit-member-icon" onclick="openEditModal(1)" style="position: absolute; top: 10px; right: 10px; cursor: pointer; color: #aaa;"></i>
-            </div>
+                    <ul>
+                        <li>
+                            <div class="org-card">
+                                <div class="profile-pic-wrapper">
+                                    <img src="../images/logo.png" alt="Secretary">
+                                    <button class="edit-pic-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                                </div>
+                                <div class="org-info">
+                                    <input type="text" class="org-name" placeholder="Name of the Secretary">
+                                    <span class="org-role">SK SECRETARY</span>
+                                </div>
+                            </div>
+
+                            
+                            <ul class="members-row">
+                                <li>
+                                    <div class="org-card member-node">
+                                        <div class="profile-pic-wrapper mini"><img src="../images/logo.png"><button class="edit-pic-btn"><i class="fa-solid fa-pen-to-square"></i></button></div>
+                                        <div class="org-info"><input type="text" class="org-name" placeholder="Name"><span class="org-role">SK MEMBER</span></div>
+                                    </div>
+                                </li>
+                                <li><div class="org-card member-node"><div class="profile-pic-wrapper mini"><img src="../images/logo.png"><button class="edit-pic-btn"><i class="fa-solid fa-pen-to-square"></i></button></div><div class="org-info"><input type="text" class="org-name" placeholder="Name"><span class="org-role">SK MEMBER</span></div></div></li>
+                                <li><div class="org-card member-node"><div class="profile-pic-wrapper mini"><img src="../images/logo.png"><button class="edit-pic-btn"><i class="fa-solid fa-pen-to-square"></i></button></div><div class="org-info"><input type="text" class="org-name" placeholder="Name"><span class="org-role">SK MEMBER</span></div></div></li>
+                                <li><div class="org-card member-node"><div class="profile-pic-wrapper mini"><img src="../images/logo.png"><button class="edit-pic-btn"><i class="fa-solid fa-pen-to-square"></i></button></div><div class="org-info"><input type="text" class="org-name" placeholder="Name"><span class="org-role">SK MEMBER</span></div></div></li>
+                                <li><div class="org-card member-node"><div class="profile-pic-wrapper mini"><img src="../images/logo.png"><button class="edit-pic-btn"><i class="fa-solid fa-pen-to-square"></i></button></div><div class="org-info"><input type="text" class="org-name" placeholder="Name"><span class="org-role">SK MEMBER</span></div></div></li>
+                                <li><div class="org-card member-node"><div class="profile-pic-wrapper mini"><img src="../images/logo.png"><button class="edit-pic-btn"><i class="fa-solid fa-pen-to-square"></i></button></div><div class="org-info"><input type="text" class="org-name" placeholder="Name"><span class="org-role">SK MEMBER</span></div></div></li>
+                                <li><div class="org-card member-node"><div class="profile-pic-wrapper mini"><img src="../images/logo.png"><button class="edit-pic-btn"><i class="fa-solid fa-pen-to-square"></i></button></div><div class="org-info"><input type="text" class="org-name" placeholder="Name"><span class="org-role">SK MEMBER</span></div></div></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="org-card">
+                                <div class="profile-pic-wrapper">
+                                    <img src="../images/logo.png" alt="Treasurer">
+                                    <button class="edit-pic-btn"><i class="fa-solid fa-pen-to-square"></i></button>
+                                </div>
+                                <div class="org-info">
+                                    <input type="text" class="org-name" placeholder="Name of the Treasurer">
+                                    <span class="org-role">SK TREASURER</span>
+                                </div>
+                            </div>
+                        </li>
+                        
+                    </ul>
+                </li>
+            </ul>
         </div>
-
-        <div style="width: 2px; height: 30px; background: #ddd; margin: -40px auto 10px auto;"></div>
-
-        <div class="org-level level-2" style="display: flex; justify-content: center; gap: 60px; margin-bottom: 40px;">
-            <div class="member-node secretary" style="position: relative; padding: 15px; border: 2px solid #003a70; background: #eef7ff; border-radius: 10px; width: 200px;">
-                <div class="avatar-holder" style="width: 70px; height: 70px; background: #ddd; border-radius: 50%; margin: 0 auto 10px auto;">
-                    <img src="../images/default-avatar.png" alt="Avatar" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <h6 class="member-name" style="color: #0d6efd;">[NAME HERE]</h6>
-                <span class="member-role" style="background: #003a70; color: white; padding: 4px 10px; font-size: 0.7rem; border-radius: 4px;">SK SECRETARY</span>
-                <i class="fa-solid fa-pen-to-square edit-member-icon" onclick="openEditModal(2)" style="position: absolute; top: 8px; right: 8px; cursor: pointer; color: #aaa;"></i>
-            </div>
-            <div class="member-node treasurer" style="position: relative; padding: 15px; border: 2px solid #003a70; background: #eef7ff; border-radius: 10px; width: 200px;">
-                <div class="avatar-holder" style="width: 70px; height: 70px; background: #ddd; border-radius: 50%; margin: 0 auto 10px auto;">
-                    <img src="../images/default-avatar.png" alt="Avatar" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <h6 class="member-name" style="color: #0d6efd;">[NAME HERE]</h6>
-                <span class="member-role" style="background: #003a70; color: white; padding: 4px 10px; font-size: 0.7rem; border-radius: 4px;">SK TREASURER</span>
-                <i class="fa-solid fa-pen-to-square edit-member-icon" onclick="openEditModal(3)" style="position: absolute; top: 8px; right: 8px; cursor: pointer; color: #aaa;"></i>
-            </div>
-        </div>
-
-        <div style="width: 2px; height: 30px; background: #ddd; margin: -40px auto 10px auto;"></div>
-
-        <div class="org-level level-3" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 15px; max-width: 1100px; margin: 0 auto;">
-            <div class="member-node kagawad" style="position: relative; padding: 10px; border: 1px solid #ddd; background: #f8f9fa; border-radius: 8px; text-align: center;">
-                <div class="avatar-holder" style="width: 50px; height: 50px; background: #eee; border-radius: 50%; margin: 0 auto 8px auto;">
-                    <img src="../images/default-avatar.png" alt="Avatar" style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <strong class="member-name" style="font-size: 0.85rem; color: #333;">[NAME]</strong>
-                <span class="member-role" style="display: block; font-size: 0.7rem; color: #777;">Kagawad 1</span>
-                <i class="fa-solid fa-pen-to-square edit-member-icon" onclick="openEditModal(4)" style="position: absolute; top: 5px; right: 5px; font-size: 0.75rem; cursor: pointer; color: #aaa;"></i>
-            </div>
-            <div class="member-node kagawad" style="position: relative; padding: 10px; border: 1px solid #ddd; background: #f8f9fa; border-radius: 8px; text-align: center;"><strong class="member-name" style="font-size: 0.85rem;">[NAME]</strong><span class="member-role" style="display: block; font-size: 0.7rem; color: #777;">Kagawad 2</span><i class="fa-solid fa-pen-to-square edit-member-icon" onclick="openEditModal(5)" style="position: absolute; top: 5px; right: 5px; font-size: 0.75rem; cursor: pointer; color: #aaa;"></i></div>
-            <div class="member-node kagawad" style="position: relative; padding: 10px; border: 1px solid #ddd; background: #f8f9fa; border-radius: 8px; text-align: center;"><strong class="member-name" style="font-size: 0.85rem;">[NAME]</strong><span class="member-role" style="display: block; font-size: 0.7rem; color: #777;">Kagawad 3</span><i class="fa-solid fa-pen-to-square edit-member-icon" onclick="openEditModal(6)" style="position: absolute; top: 5px; right: 5px; font-size: 0.75rem; cursor: pointer; color: #aaa;"></i></div>
-            <div class="member-node kagawad" style="position: relative; padding: 10px; border: 1px solid #ddd; background: #f8f9fa; border-radius: 8px; text-align: center;"><strong class="member-name" style="font-size: 0.85rem;">[NAME]</strong><span class="member-role" style="display: block; font-size: 0.7rem; color: #777;">Kagawad 4</span><i class="fa-solid fa-pen-to-square edit-member-icon" onclick="openEditModal(7)" style="position: absolute; top: 5px; right: 5px; font-size: 0.75rem; cursor: pointer; color: #aaa;"></i></div>
-            <div class="member-node kagawad" style="position: relative; padding: 10px; border: 1px solid #ddd; background: #f8f9fa; border-radius: 8px; text-align: center;"><strong class="member-name" style="font-size: 0.85rem;">[NAME]</strong><span class="member-role" style="display: block; font-size: 0.7rem; color: #777;">Kagawad 5</span><i class="fa-solid fa-pen-to-square edit-member-icon" onclick="openEditModal(8)" style="position: absolute; top: 5px; right: 5px; font-size: 0.75rem; cursor: pointer; color: #aaa;"></i></div>
-            <div class="member-node kagawad" style="position: relative; padding: 10px; border: 1px solid #ddd; background: #f8f9fa; border-radius: 8px; text-align: center;"><strong class="member-name" style="font-size: 0.85rem;">[NAME]</strong><span class="member-role" style="display: block; font-size: 0.7rem; color: #777;">Kagawad 6</span><i class="fa-solid fa-pen-to-square edit-member-icon" onclick="openEditModal(9)" style="position: absolute; top: 5px; right: 5px; font-size: 0.75rem; cursor: pointer; color: #aaa;"></i></div>
-            <div class="member-node kagawad" style="position: relative; padding: 10px; border: 1px solid #ddd; background: #f8f9fa; border-radius: 8px; text-align: center;"><strong class="member-name" style="font-size: 0.85rem;">[NAME]</strong><span class="member-role" style="display: block; font-size: 0.7rem; color: #777;">Kagawad 7</span><i class="fa-solid fa-pen-to-square edit-member-icon" onclick="openEditModal(10)" style="position: absolute; top: 5px; right: 5px; font-size: 0.75rem; cursor: pointer; color: #aaa;"></i></div>
-        </div>
-    </div>
-</div>
-
-<div id="edit-member-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; justify-content: center; align-items: center;">
-    <div style="background: white; padding: 30px; border-radius: 12px; width: 450px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-            <h4 style="margin: 0; color: #333;"><i class="fa-solid fa-user-pen"></i> Edit Member Details</h4>
-            <i class="fa-solid fa-xmark" id="close-modal" style="cursor: pointer; font-size: 1.2rem; color: #aaa;"></i>
-        </div>
-        <form id="edit-member-form">
-            <input type="hidden" id="edit-member-id">
-            <div class="form-group" style="margin-bottom: 15px;">
-                <label style="display: block; margin-bottom: 8px; font-weight: 500;">Name</label>
-                <input type="text" id="edit-member-name" class="year-input" style="width: 100%; text-align: left;" required>
-            </div>
-            <div class="form-group" style="margin-bottom: 20px;">
-                <label style="display: block; margin-bottom: 8px; font-weight: 500;">Position/Committee</label>
-                <input type="text" id="edit-member-position" class="year-input" style="width: 100%; text-align: left;" required>
-            </div>
-            <div style="display: flex; justify-content: flex-end; gap: 10px;">
-                <button type="button" class="btn-new-year" id="btn-cancel-edit" style="background-color: #adb5bd;">Cancel</button>
-                <button type="submit" class="btn-add-youth" style="background-color: #0d6efd; padding: 10px 20px;">Save Changes</button>
-            </div>
-        </form>
     </div>
 </div>
-
-
-
-
-
 
 
 </div> <!-- closing div for dashboard beside the sidebar-->
