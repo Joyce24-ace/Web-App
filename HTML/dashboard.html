@@ -136,6 +136,7 @@
 
 </div>
 
+
 </main>
 
 <!-- Youth Profile DIV -->
@@ -346,7 +347,20 @@
                     <input type="email" class="year-input" style="width:100%; text-align:left;">
                 </div>
                 <div class="form-group" style="grid-column: span 2;">
-                    <label>Complete Address (Brgy, Municipality, Province)</label>
+                    <label>Province</label>
+                    <input type="text" class="year-input" style="width:100%; text-align:left;">
+                </div>
+                <div class="form-group" style="grid-column: span 2;">
+                    <label>Municipality </label>
+                    <input type="text" class="year-input" style="width:100%; text-align:left;">
+                </div>
+                 <div class="form-group" style="grid-column: span 2;">
+                    <label>Barangay </label>
+                    <input type="text" class="year-input" style="width:100%; text-align:left;">
+                </div>               
+            
+                <div class="form-group" style="grid-column: span 2;">
+                    <label>Purok/Zone</label>
                     <input type="text" class="year-input" style="width:100%; text-align:left;">
                 </div>
             </div>
@@ -688,6 +702,7 @@
 </div><!-- end of settings-->
 
 
+
     <!--Dark Mode-->
     <br>
 <div class="preferences-card" style="background: white; padding: 20px; border-radius: 12px; border: 1px solid #ddd; margin-bottom: 20px;">
@@ -705,6 +720,7 @@
 </div>
 
 </div><!-- end for setting-->
+
 
 
 <!--Organizational chart-->
@@ -725,47 +741,34 @@
                     </div>
 
                     <ul>
+                        <li> <div class="org-card">
+                                <div class="profile-pic-wrapper"><img src="../images/logo.png" alt="Secretary"><button class="edit-pic-btn"><i class="fa-solid fa-pen-to-square"></i></button></div>
+                                <div class="org-info"><input type="text" class="org-name" placeholder="Name of the Secretary"><span class="org-role">SK SECRETARY</span></div>
+                            </div>
+                        </li>
+
+                        <li> <div class="org-card">
+                                <div class="profile-pic-wrapper"><img src="../images/logo.png" alt="Treasurer"><button class="edit-pic-btn"><i class="fa-solid fa-pen-to-square"></i></button></div>
+                                <div class="org-info"><input type="text" class="org-name" placeholder="Name of the Treasurer"><span class="org-role">SK TREASURER</span></div>
+                            </div>
+                        </li>
+
                         <li>
                             <div class="org-card">
-                                <div class="profile-pic-wrapper">
-                                    <img src="../images/logo.png" alt="Secretary">
-                                    <button class="edit-pic-btn"><i class="fa-solid fa-pen-to-square"></i></button>
-                                </div>
-                                <div class="org-info">
-                                    <input type="text" class="org-name" placeholder="Name of the Secretary">
-                                    <span class="org-role">SK SECRETARY</span>
-                                </div>
+                                <div class="org-info"><span class="org-role">SK MEMBERS</span></div>
                             </div>
 
-                            
                             <ul class="members-row">
-                                <li>
-                                    <div class="org-card member-node">
-                                        <div class="profile-pic-wrapper mini"><img src="../images/logo.png"><button class="edit-pic-btn"><i class="fa-solid fa-pen-to-square"></i></button></div>
-                                        <div class="org-info"><input type="text" class="org-name" placeholder="Name"><span class="org-role">SK MEMBER</span></div>
-                                    </div>
-                                </li>
                                 <li><div class="org-card member-node"><div class="profile-pic-wrapper mini"><img src="../images/logo.png"><button class="edit-pic-btn"><i class="fa-solid fa-pen-to-square"></i></button></div><div class="org-info"><input type="text" class="org-name" placeholder="Name"><span class="org-role">SK MEMBER</span></div></div></li>
                                 <li><div class="org-card member-node"><div class="profile-pic-wrapper mini"><img src="../images/logo.png"><button class="edit-pic-btn"><i class="fa-solid fa-pen-to-square"></i></button></div><div class="org-info"><input type="text" class="org-name" placeholder="Name"><span class="org-role">SK MEMBER</span></div></div></li>
                                 <li><div class="org-card member-node"><div class="profile-pic-wrapper mini"><img src="../images/logo.png"><button class="edit-pic-btn"><i class="fa-solid fa-pen-to-square"></i></button></div><div class="org-info"><input type="text" class="org-name" placeholder="Name"><span class="org-role">SK MEMBER</span></div></div></li>
                                 <li><div class="org-card member-node"><div class="profile-pic-wrapper mini"><img src="../images/logo.png"><button class="edit-pic-btn"><i class="fa-solid fa-pen-to-square"></i></button></div><div class="org-info"><input type="text" class="org-name" placeholder="Name"><span class="org-role">SK MEMBER</span></div></div></li>
                                 <li><div class="org-card member-node"><div class="profile-pic-wrapper mini"><img src="../images/logo.png"><button class="edit-pic-btn"><i class="fa-solid fa-pen-to-square"></i></button></div><div class="org-info"><input type="text" class="org-name" placeholder="Name"><span class="org-role">SK MEMBER</span></div></div></li>
                                 <li><div class="org-card member-node"><div class="profile-pic-wrapper mini"><img src="../images/logo.png"><button class="edit-pic-btn"><i class="fa-solid fa-pen-to-square"></i></button></div><div class="org-info"><input type="text" class="org-name" placeholder="Name"><span class="org-role">SK MEMBER</span></div></div></li>
+                                
                             </ul>
                         </li>
-                        <li>
-                            <div class="org-card">
-                                <div class="profile-pic-wrapper">
-                                    <img src="../images/logo.png" alt="Treasurer">
-                                    <button class="edit-pic-btn"><i class="fa-solid fa-pen-to-square"></i></button>
-                                </div>
-                                <div class="org-info">
-                                    <input type="text" class="org-name" placeholder="Name of the Treasurer">
-                                    <span class="org-role">SK TREASURER</span>
-                                </div>
-                            </div>
-                        </li>
-                        
+
                     </ul>
                 </li>
             </ul>
