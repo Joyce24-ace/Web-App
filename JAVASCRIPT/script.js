@@ -288,5 +288,25 @@ if (darkModeToggle) {
         }
     }
 
-    
+
+
+// for Logout Modal
+const modal = document.getElementById('logoutModal');
+const openBtn = document.getElementById('openModal');
+const cancelBtn = document.getElementById('cancelBtn');
+const confirmBtn = document.getElementById('confirmBtn');
+
+// Show modal
+openBtn.onclick = () => modal.style.display = 'flex';
+
+// Hide modal
+cancelBtn.onclick = () => modal.style.display = 'none';
+
+// Redirect on confirm
+confirmBtn.onclick = () => {
+    window.location.href = "index.html";
+};
+
+
+
 }); // End of DOMContentLoaded

@@ -16,13 +16,30 @@
             <img src="../images/logo.png" alt="KK Logo" class="nav-logo">
             <h1>KK Profiling Management System</h1>
         </div>
-        <div class="header-right">
-            <button class="logout-btn"><i class="fa-solid fa-right-from-bracket"></i> Log Out</button>
-            <div class="user-avatar"><i class="fa-solid fa-circle-user"></i></div>
+        
+        
+<!-- Logout Button -->
+<button class="logout-btn" id="openModal">
+    <i class="fa-solid fa-right-from-bracket"></i> Log Out
+</button>
+
+<!-- Hidden Modal -->
+<div id="logoutModal" class="modal-overlay" style="display:none;">
+    <div class="modal-content">
+        <h3>Confirm Logout</h3>
+        <p>Are you sure you want to log out?</p>
+        <div class="modal-buttons">
+            <button id="cancelBtn" class="btn-cancel">Cancel</button>
+            <button id="confirmBtn" class="btn-confirm">Yes, Log Out</button>
         </div>
+    </div>
+</div>
+
+
     </header>
     
 
+<!-- side navigation -->
     <div class="dashboard-wrapper">
         <nav class="sidebar">
             <div class="nav-item active"><i class="fa-solid fa-house"></i> Dashboard</div>
@@ -143,11 +160,13 @@
 <div id="youth-profiles-content" style="display: none;">
         <div class="records-header">
             <h3>Youth Records</h3>
+
             <div class="action-buttons">
                 <button class="btn-new-year"><i class="fa-solid fa-calendar-check"></i> New Year</button>
                 <button class="btn-add-youth"><i class="fa-solid fa-plus"></i> Add New Youth</button>
             </div>
         </div>
+
 
         <div class="filter-card">
             <div class="filter-row">

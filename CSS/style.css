@@ -723,7 +723,90 @@ body.dark-theme {
 }
 
 
+/* This is for the confirming to log out*/
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            z-index: 1000; 
+
+        }
+        
+
+       
+        .modal-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px; 
+            text-align: center;
+            width: 90%;
+            max-width: 500px; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+            position: relative; 
+        }
+
+        .modal-content h1 {
+            font-size: 2rem; /* Size of "Are you sure..." */
+            color: #333; 
+            margin-top: 0;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .modal-content p {
+            font-size: 1.2rem; /* Size of "You will be..." */
+            color: #666; 
+            margin-bottom: 40px; /* Spacing before buttons */
+            line-height: 1.5; 
+        }
+
+        /* 4. Button Container and Base Styles */
+        .modal-buttons {
+            display: flex;
+            gap: 20px; 
+            justify-content: center; 
+        }
+
+        .modal-buttons button {
+            flex: 1; 
+            padding: 15px 30px; 
+            font-size: 1.2rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s, border 0.3s;
+            max-width: 200px; 
+        }
 
 
+        .modal-buttons .btn-cancel {
+            background-color: red; 
+            color: #333; 
+            border: 1px solid #ccc; 
+        }
+
+        .modal-buttons .btn-cancel:hover {
+            background-color: #14f5f5;
+            border-color: black;
+        }
+
+
+
+        .modal-buttons .btn-confirm {
+            background-color: green; 
+            color: rgb(6, 121, 160); 
+            border: 1px solid #ccc; 
+        }
+
+
+        .modal-buttons .btn-confirm:hover {
+            background-color: #14f5f5; 
+            border-color: black;
+        }
 
 
