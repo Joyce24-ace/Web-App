@@ -170,10 +170,12 @@
 
         <div class="filter-card">
             <div class="filter-row">
-                <div class="search-container">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                    <input type="text" placeholder="Search by name or address..">
-                </div>
+
+        <div class="search-bar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="search-youth" placeholder="Search by name...">
+        </div>
+
                 <div class="filter-group">
                     <select class="status-select">
                         <option>All Status</option>
@@ -182,6 +184,7 @@
                     </select>
                     <input type="text" class="year-input" value="Year 2024">
                 </div>
+                
             </div>
             <div style="display: flex; justify-content: space-between; align-items: center;">
                 <p style="color: #666;">Showing 0 of 0 profiles</p>
@@ -287,27 +290,27 @@
             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-bottom: 20px;">
                 <div class="form-group">
                     <label>First Name</label>
-                    <input type="text" class="year-input" style="width:100%; text-align:left;" required>
+                    <input type="text" id="firstName" class="year-input" style="width:100%; text-align:left;" required>
                 </div>
                 <div class="form-group">
                     <label>Middle Name</label>
-                    <input type="text" class="year-input" style="width:100%; text-align:left;">
+                    <input type="text" id="middleName" class="year-input" style="width:100%; text-align:left;">
                 </div>
                 <div class="form-group">
                     <label>Last Name</label>
-                    <input type="text" class="year-input" style="width:100%; text-align:left;" required>
+                    <input type="text" id="lastName" class="year-input" style="width:100%; text-align:left;" required>
                 </div>
                 <div class="form-group">
                     <label>Age</label>
-                    <input type="number" class="year-input" style="width:100%; text-align:left;" required>
+                    <input type="number" id="age" class="year-input" style="width:100%; text-align:left;" required>
                 </div>
                 <div class="form-group">
                     <label>Birthdate</label>
-                    <input type="date" class="year-input" style="width:100%; text-align:left;" required>
+                    <input type="date" id="birthdate" class="year-input" style="width:100%; text-align:left;" required>
                 </div>
                 <div class="form-group">
                     <label>Sex</label>
-                    <select class="year-input" style="width:100%;">
+                    <select id="sex" class="year-input" style="width:100%;">
                         <option>Male</option>
                         <option>Female</option>
                     </select>
@@ -318,7 +321,7 @@
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-bottom: 20px;">
                 <div class="form-group">
                     <label>Civil Status</label>
-                    <select class="year-input" style="width:100%;">
+                    <select id="civilStatus" class="year-input" style="width:100%;">
                         <option>Single</option>
                         <option>Married</option>
                         <option>Widowed</option>
@@ -328,7 +331,7 @@
                 </div>
                 <div class="form-group">
                     <label>Educational Background</label>
-                    <select class="year-input" style="width:100%;">
+                    <select id="education" class="year-input" style="width:100%;">
                         <option>Elementary Level/Grad</option>
                         <option>High School Level/Grad</option>
                         <option>Vocational Grad</option>
@@ -338,7 +341,7 @@
                 </div>
                 <div class="form-group">
                     <label>Youth Classification</label>
-                    <select class="year-input" style="width:100%;">
+                    <select id="classification" class="year-input" style="width:100%;">
                         <option>In School Youth</option>
                         <option>Out of School Youth</option>
                         <option>Working Youth</option>
@@ -346,7 +349,7 @@
                 </div>
                 <div class="form-group">
                     <label>Specific Needs</label>
-                    <select class="year-input" style="width:100%;">
+                    <select id="specificNeeds" class="year-input" style="width:100%;">
                         <option>None</option>
                         <option>Person with Disability</option>
                         <option>Indigenous People</option>
@@ -359,28 +362,28 @@
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
                 <div class="form-group">
                     <label>Contact Number</label>
-                    <input type="text" class="year-input" style="width:100%; text-align:left;" placeholder="09xxxxxxxxx">
+                    <input type="text" id="contact" class="year-input" style="width:100%; text-align:left;" placeholder="09xxxxxxxxx">
                 </div>
                 <div class="form-group">
                     <label>Email Address</label>
-                    <input type="email" class="year-input" style="width:100%; text-align:left;">
+                    <input type="email" id="email" class="year-input" style="width:100%; text-align:left;">
                 </div>
                 <div class="form-group" style="grid-column: span 2;">
                     <label>Province</label>
-                    <input type="text" class="year-input" style="width:100%; text-align:left;">
+                    <input type="text" id="province" class="year-input" style="width:100%; text-align:left;">
                 </div>
                 <div class="form-group" style="grid-column: span 2;">
                     <label>Municipality </label>
-                    <input type="text" class="year-input" style="width:100%; text-align:left;">
+                    <input type="text" id="municipality" class="year-input" style="width:100%; text-align:left;">
                 </div>
                  <div class="form-group" style="grid-column: span 2;">
                     <label>Barangay </label>
-                    <input type="text" class="year-input" style="width:100%; text-align:left;">
-                </div>               
+                    <input type="text" id="barangay" class="year-input" style="width:100%; text-align:left;">
+                </div>                
             
                 <div class="form-group" style="grid-column: span 2;">
                     <label>Purok/Zone</label>
-                    <input type="text" class="year-input" style="width:100%; text-align:left;">
+                    <input type="text" id="purok" class="year-input" style="width:100%; text-align:left;">
                 </div>
             </div>
 
@@ -391,7 +394,6 @@
         </form>
     </div>
 </div>
-
 
 <!--events -->
 <div id="events-view" style="display: none; flex: 1; padding: 30px;">

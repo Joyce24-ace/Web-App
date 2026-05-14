@@ -309,4 +309,194 @@ confirmBtn.onclick = () => {
 
 
 
+
+// --- Youth Profile Registration Logic ---
+const addYouthForm = document.getElementById('add-youth-form');
+
+if (addYouthForm) {
+    addYouthForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // 1. Collect and trim inputs
+        const firstName = document.getElementById('firstName').value.trim();
+        const middleName = document.getElementById('middleName').value.trim();
+        const lastName = document.getElementById('lastName').value.trim();
+
+        // 2. Get existing records
+        const existingRecords = JSON.parse(localStorage.getItem('kkYouthProfiles')) || [];
+
+        // 3. DUPLICATE CHECK
+        const isDuplicate = existingRecords.some(record => {
+            return record.firstName.toLowerCase() === firstName.toLowerCase() &&
+                   (record.middleName || "").toLowerCase() === middleName.toLowerCase() &&
+                   record.lastName.toLowerCase() === lastName.toLowerCase();
+        });
+
+        if (isDuplicate) {
+            alert(`Error: A profile for "${firstName} ${middleName} ${lastName}" already exists!`);
+            return; // Stops the saving process
+        }
+
+        // 4. Create the data object
+        const youthData = {
+            id: Date.now(),
+            firstName: firstName,
+            middleName: middleName,
+            lastName: lastName,
+            age: document.getElementById('age').value,
+            birthdate: document.getElementById('birthdate').value,
+            sex: document.getElementById('sex').value,
+            classification: document.getElementById('classification').value,
+            contact: document.getElementById('contact').value,
+            address: `${document.getElementById('purok').value}, ${document.getElementById('barangay').value}`
+            // Add other fields as needed based on your HTML
+        };
+
+        // 5. Save and Refresh
+        existingRecords.push(youthData);
+        localStorage.setItem('kkYouthProfiles', JSON.stringify(existingRecords));
+
+        alert("Youth profile registered successfully!");
+        addYouthForm.reset();
+        displayYouthRecords(); // Refresh the table
+        
+        // Return to the list view
+        if(btnBackToList) btnBackToList.click();
+    });
+}
+
+// Function to display records in your table
+function displayYouthRecords() {
+    const tableBody = document.getElementById('youth-list');
+    if (!tableBody) return;
+
+    // 1. Get current values from the UI
+    const searchVal = document.querySelector('.search-container input').value.toLowerCase();
+    const statusVal = document.querySelector('.status-select').value; 
+    
+    // 2. Get data from storage
+    const records = JSON.parse(localStorage.getItem('kkYouthProfiles')) || [];
+    tableBody.innerHTML = ''; 
+
+    // 3. Apply combined filtering
+    const filtered = records.filter(profile => {
+        const fullName = `${profile.firstName} ${profile.middleName || ""} ${profile.lastName}`.toLowerCase();
+        
+        // Check text match
+        const matchesSearch = fullName.includes(searchVal);
+
+        // Check dropdown match
+        let matchesStatus = true;
+        if (statusVal === "ISY") {
+            matchesStatus = profile.classification === "In School Youth";
+        } else if (statusVal === "OSY") {
+            matchesStatus = profile.classification === "Out of School Youth";
+        } else if (statusVal === "Working Youth") {
+            matchesStatus = profile.classification === "Working Youth";
+        }
+
+        return matchesSearch && matchesStatus;
+    });
+
+
+    // --- ADD THIS PART HERE ---
+    const countText = document.querySelector('.filter-card p') || document.querySelector('p[style*="color: #666"]');
+    if (countText) {
+        countText.innerText = `Showing ${filtered.length} of ${allRecords.length} profiles`;
+    }
+    // ---------------------------
+
+    
+
+    // 5. Render the filtered results
+    filtered.forEach(profile => {
+        const row = `
+            <tr>
+                <td>${profile.firstName} ${profile.middleName ? profile.middleName + ' ' : ''}${profile.lastName}</td>
+                <td>${profile.age}</td>
+                <td>${profile.sex}</td>
+                <td><span class="status-badge">${profile.classification}</span></td>
+                <td>${profile.address}</td>
+                <td>${profile.contact}</td>
+                <td>
+                    <button onclick="deleteProfile(${profile.id})" class="btn-delete" style="color: #e03131; border: none; background: none; cursor: pointer;">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </td>
+            </tr>`;
+        tableBody.insertAdjacentHTML('beforeend', row);
+    });
+}
+
+displayYouthRecords();
+
+
+// --- Search Functionality ---
+// 1. Add the missing listener for the dropdown
+const statusSelect = document.querySelector('.status-select');
+if (statusSelect) {
+    statusSelect.addEventListener('change', () => {
+        displayYouthRecords(); // Re-filter when dropdown changes
+    });
+}
+
+// 2. Update your existing Search Listener to use displayYouthRecords
+if (searchInput) {
+    searchInput.addEventListener('input', () => {
+        displayYouthRecords(); // Re-filter when typing
+    });
+}
+
+// 3. Use this consolidated function (Replace your current displayYouthRecords)
+function displayYouthRecords() {
+    const tableBody = document.getElementById('youth-list');
+    if (!tableBody) return;
+
+    // Get current values from BOTH inputs
+    const searchVal = document.getElementById('search-youth').value.toLowerCase();
+    const statusVal = document.querySelector('.status-select').value; 
+    
+    const records = JSON.parse(localStorage.getItem('kkYouthProfiles')) || [];
+    tableBody.innerHTML = ''; 
+
+    const filtered = records.filter(profile => {
+        const fullName = `${profile.firstName} ${profile.middleName || ""} ${profile.lastName}`.toLowerCase();
+        
+        // Check Name Match
+        const matchesSearch = fullName.includes(searchVal);
+
+        // Check Status Match
+        let matchesStatus = true;
+        if (statusVal === "ISY") {
+            matchesStatus = profile.classification === "In School Youth";
+        } else if (statusVal === "OSY") {
+            matchesStatus = profile.classification === "Out of School Youth";
+        } else if (statusVal === "Working Youth") {
+            matchesStatus = profile.classification === "Working Youth";
+        }
+
+        return matchesSearch && matchesStatus; // Must match BOTH
+    });
+
+    // Render the final filtered list
+    filtered.forEach(profile => {
+        const row = `
+            <tr>
+                <td>${profile.firstName} ${profile.middleName ? profile.middleName + ' ' : ''}${profile.lastName}</td>
+                <td>${profile.age}</td>
+                <td>${profile.sex}</td>
+                <td><span class="status-badge">${profile.classification}</span></td>
+                <td>${profile.address}</td>
+                <td>${profile.contact}</td>
+                <td>
+                    <button onclick="deleteProfile(${profile.id})" class="btn-delete">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </td>
+            </tr>`;
+        tableBody.insertAdjacentHTML('beforeend', row);
+    });
+}
+
+
 }); // End of DOMContentLoaded
