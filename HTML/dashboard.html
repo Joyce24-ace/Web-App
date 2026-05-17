@@ -102,6 +102,7 @@
                     <h4>Age Distribution</h4>
                     <canvas id="ageChart"></canvas>
                 </div>
+
 <!--status distribution chart-->
                 <div class="chart-box">
                     <h4>Status Distribution</h4>
@@ -768,10 +769,15 @@
             <ul>
                 <li>
                     <div class="org-card">
-                        <div class="profile-pic-wrapper">
-                            <img src="../images/logo.png" alt="Chairperson">
-                            <button class="edit-pic-btn"><i class="fa-solid fa-pen-to-square"></i></button>
-                        </div>
+                        
+                <div class="profile-pic-wrapper">
+                    <img src="../images/logo.png" class="profile-preview">
+                        <label class="edit-pic-btn">
+                    <i class="fa-solid fa-pen-to-square"></i>
+                    <input type="file" accept="image/*" class="image-uploader" style="display: none;">
+                </label>
+                </div>
+
                         <div class="org-info">
                             <input type="text" class="org-name" placeholder="Name of the Chairman">
                             <span class="org-role">SK CHAIRPERSON</span>

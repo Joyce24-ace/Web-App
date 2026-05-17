@@ -493,5 +493,88 @@ function displayYouthRecords() {
     });
 }
 
+// this is the script that will handle saving image locally for org chart
+// this is the script that will handle saving image locally for org chart
+
+// 1. Create a single, hidden input field in memory so we don't alter the HTML document structure
+const orgFileInput = document.createElement('input');
+orgFileInput.type = 'file';
+orgFileInput.accept = 'image/*';
+orgFileInput.style.display = 'none';
+document.body.appendChild(orgFileInput);
+
+let currentPreviewImg = null;
+let currentStorageKey = null;
+
+// 2. Generate unique storage IDs and load any saved pictures from localStorage
+function loadSavedOrgImages() {
+    const savedImages = JSON.parse(localStorage.getItem('orgChartImages')) || {};
+    
+    document.querySelectorAll('.org-card').forEach((card, index) => {
+        const roleSpan = card.querySelector('.org-role');
+        const roleName = roleSpan ? roleSpan.textContent.trim().replace(/\s+/g, '-') : 'MEMBER';
+        
+        // Form a unique key combination (e.g., "SK-CHAIRMAN-0", "SK-MEMBER-3")
+        const storageKey = `${roleName}-${index}`;
+        card.setAttribute('data-storage-key', storageKey); // Bind key directly to card element
+
+        // If an image string exists in local memory, swap out the default logo
+        if (savedImages[storageKey]) {
+            const imgElement = card.querySelector('.profile-pic-wrapper img');
+            if (imgElement) {
+                imgElement.src = savedImages[storageKey];
+            }
+        }
+    });
+}
+
+// 3. Listen for clicks on your existing edit buttons seamlessly
+document.body.addEventListener('click', (event) => {
+    const targetBtn = event.target.closest('.edit-pic-btn');
+    
+    if (targetBtn) {
+        event.preventDefault(); // Stop any default form bubble paths
+        
+        const card = targetBtn.closest('.org-card');
+        if (card) {
+            // Reference the image tag inside this exact card container
+            currentPreviewImg = card.querySelector('.profile-pic-wrapper img');
+            currentStorageKey = card.getAttribute('data-storage-key');
+            
+            // Pop open the native file windows directory
+            orgFileInput.click();
+        }
+    }
+});
+
+// 4. Listen for the file selection change event
+orgFileInput.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    if (file && currentPreviewImg && currentStorageKey) {
+        const reader = new FileReader();
+        
+        reader.onload = function (e) {
+            const base64Image = e.target.result;
+            
+            // Replace the local preview logo source instantly
+            currentPreviewImg.src = base64Image;
+            
+            // Commit string data safely to browser storage
+            const savedImages = JSON.parse(localStorage.getItem('orgChartImages')) || {};
+            savedImages[currentStorageKey] = base64Image;
+            localStorage.setItem('orgChartImages', JSON.stringify(savedImages));
+        };
+        
+        reader.readAsDataURL(file);
+    }
+    // Reset file value to allow re-uploading the same picture file if needed
+    event.target.value = '';
+});
+
+// 5. Run setup routine immediately on page initialization
+loadSavedOrgImages();
+
 
 }); // End of DOMContentLoaded
+
+

@@ -1,5 +1,3 @@
-
-
 *, *::before, *::after {
     margin: 0;
     padding: 0;
@@ -185,6 +183,7 @@
 }
 
 /* END OF LOGIN CSS*/
+
 
 
 
@@ -777,7 +776,38 @@ body.dark-theme {
     width: 100%;
 }
 
+/* Localized input overrides to expand structural typing space safely */
+.org-info {
+    width: 100%;
+    padding: 2px 4px;
+}
 
+.org-name {
+    width: 100%;
+    max-width: 160px; /* Protects node blocks from breaking line thresholds */
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-bottom: 1px dashed transparent;
+    background: transparent;
+    padding: 4px 2px;
+    transition: border-bottom 0.2s ease-in-out;
+}
+
+/* Subtle edit active indicator */
+.org-name:focus {
+    outline: none;
+    border-bottom: 1px solid var(--primary-teal); /* Links cleanly with your existing teal variables */
+}
+
+/* Forces the updated label format to maintain standard clickable properties */
+label.edit-pic-btn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 /*LOGOUT DESIGN WARNING!!!!!!*/
@@ -911,3 +941,104 @@ body.dark-theme {
 }
 
 /*END OF SEARCHING DESIGN*/
+
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT ADJUSTMENTS (DOES NOT ALTER THE VISUAL DESIGN/COLORS)
+   ========================================================================== */
+
+/* For Tablet and smaller viewports */
+@media (max-width: 992px) {
+    /* Wraps sidebar and content vertically instead of squeezing them side-by-side */
+    .dashboard-wrapper {
+        flex-direction: column;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    /* Makes the sidebar full width on small screens */
+    .sidebar {
+        width: 100%;
+    }
+
+    /* Adapts the 4-column statistic cards down into 2 columns */
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Adapts the 2-column charts layout down to 1 stackable column */
+    .charts-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Adapts the 3-column registration forms into a clean 2-column layout */
+    #add-youth-form div[style*="grid-template-columns: 1fr 1fr 1fr"] {
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    /* Adapts filter row to stack gracefully if it lacks room */
+    .filter-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+    
+    /* Ensures the data tables don't clip text out of view */
+    .youth-records-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* For Mobile Phones */
+@media (max-width: 576px) {
+    /* Adjusts top header layout to stack elements vertically when room is limited */
+    .main-header {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px;
+        text-align: center;
+    }
+    .header-left {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .header-right {
+        width: 100%;
+        justify-content: center;
+    }
+    .logout-btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Forces all grids (Stats, Charts, and Forms) into a clean single-column display */
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    #add-youth-form div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    #add-event-form-view div[style*="grid-template-columns"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Fixes sub-layouts inside your forms that use span 2 */
+    #add-youth-form div[style*="grid-column: span 2"],
+    #add-event-form div[style*="grid-column: span 2"] {
+        grid-column: span 1 !important;
+    }
+    
+    /* Tweaks padding inside main content on tight screen widths */
+    #youth-profiles-content, 
+    #new-year-view, 
+    #add-youth-view, 
+    #events-view, 
+    #add-event-form-view, 
+    #settings-view {
+        padding: 15px !important;
+    }
+}
