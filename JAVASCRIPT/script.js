@@ -17,8 +17,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnBackToEvents = document.getElementById('btn-back-to-events');
     const newEventForm = document.getElementById('new-event-form');
    
-
-    
     // New Year Buttons
     const btnOpenNewYear = document.querySelector('.btn-new-year'); 
     const btnBackFromNewYear = document.getElementById('back-from-new-year');
