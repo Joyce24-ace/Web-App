@@ -1,14 +1,16 @@
 import { apiRequest } from "./apiClient.js";
 
-const MembersAPI = {
+const SKAPI = {
 
-    getAllMembers() {
+
+    getMembers() {
         return apiRequest("/members/");
     },
 
     getMember(id) {
         return apiRequest(`/members/${id}/`);
     },
+
 
     createMember(memberData) {
         return apiRequest("/members/", {
@@ -17,6 +19,7 @@ const MembersAPI = {
         });
     },
 
+
     updateMember(id, memberData) {
         return apiRequest(`/members/${id}/`, {
             method: "PUT",
@@ -24,18 +27,13 @@ const MembersAPI = {
         });
     },
 
-    patchMember(id, partialData) {
-        return apiRequest(`/members/${id}/`, {
-            method: "PATCH",
-            data: partialData
-        });
-    },
 
     deleteMember(id) {
         return apiRequest(`/members/${id}/`, {
             method: "DELETE"
         });
     }
+
 };
 
-export default MembersAPI;
+export default SKAPI;

@@ -4,25 +4,19 @@ import {
     clearTokens
 } from "./apiClient.js";
 
+const UserAPI = {
 
-const AuthAPI = {
 
-    async login(username, password) {
+    async login(credentials) {
 
-        const response = await apiRequest(
-            "/token/",
-            {
-                method: "POST",
-                requiresAuth: false,
-                data: {
-                    username,
-                    password
-                }
-            }
-        );
+        const response = await apiRequest("/login/", {
+            method: "POST",
+            data: credentials,
+            requiresAuth: false
+        });
 
-        // Save JWT Tokens
-        if (response?.access && response?.refresh) {
+        // Save JWT tokens if login successful
+        if (response.access && response.refresh) {
 
             setTokens(
                 response.access,
@@ -33,33 +27,38 @@ const AuthAPI = {
         return response;
     },
 
-    logout() {
+    async logout() {
+
+        const response = await apiRequest("/logout/", {
+            method: "POST"
+        });
 
         clearTokens();
 
-        return apiRequest(
-            "/logout/",
-            {
-                method: "POST"
-            }
-        );
+        return response;
     },
 
-    refreshToken() {
 
-        const refresh =
-            localStorage.getItem("refresh_token");
+    getUsers() {
+        return apiRequest("/users/");
+    },
 
-        return apiRequest(
-            "/token/refresh/",
-            {
-                method: "POST",
-                requiresAuth: false,
-                data: { refresh }
-            }
-        );
+
+    createUser(userData) {
+        return apiRequest("/users/", {
+            method: "POST",
+            data: userData
+        });
+    },
+
+
+
+    deleteUser(id) {
+        return apiRequest(`/users/${id}/`, {
+            method: "DELETE"
+        });
     }
+
 };
 
-
-export default AuthAPI;
+export default UserAPI;

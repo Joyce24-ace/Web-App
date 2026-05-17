@@ -1,67 +1,120 @@
 import { apiRequest } from "./apiClient.js";
 
-const ProfilingAPI = {
+const KKAPI = {
 
-    // ADDRESS
+    // =====================================
+    // PROFILING INFORMATIONS
+    // =====================================
 
-    createAddress(addressData) {
+    // GET ALL
+    getProfilingInformations() {
+        return apiRequest("/profiling-informations/");
+    },
+
+    // GET SINGLE
+    getProfilingInformation(id) {
+        return apiRequest(`/profiling-informations/${id}/`);
+    },
+
+    // POST
+    createProfilingInformation(data) {
+        return apiRequest("/profiling-informations/", {
+            method: "POST",
+            data
+        });
+    },
+
+    // PUT
+    updateProfilingInformation(id, data) {
+        return apiRequest(`/profiling-informations/${id}/`, {
+            method: "PUT",
+            data
+        });
+    },
+
+    // DELETE
+    deleteProfilingInformation(id) {
+        return apiRequest(`/profiling-informations/${id}/`, {
+            method: "DELETE"
+        });
+    },
+
+
+    // =====================================
+    // KK ADDRESS
+    // =====================================
+
+    // GET ALL
+    getKKAddresses() {
+        return apiRequest("/kk-address/");
+    },
+
+    // GET SINGLE
+    getKKAddress(id) {
+        return apiRequest(`/kk-address/${id}/`);
+    },
+
+    // POST
+    createKKAddress(data) {
         return apiRequest("/kk-address/", {
             method: "POST",
-            data: addressData
+            data
         });
     },
 
-    // STATUS
+    // PUT
+    updateKKAddress(id, data) {
+        return apiRequest(`/kk-address/${id}/`, {
+            method: "PUT",
+            data
+        });
+    },
 
-    createYouthStatus(statusData) {
+    // DELETE
+    deleteKKAddress(id) {
+        return apiRequest(`/kk-address/${id}/`, {
+            method: "DELETE"
+        });
+    },
+
+
+    // =====================================
+    // YOUTH STATUS
+    // =====================================
+
+    // GET ALL
+    getYouthStatuses() {
+        return apiRequest("/youth-status/");
+    },
+
+    // GET SINGLE
+    getYouthStatus(id) {
+        return apiRequest(`/youth-status/${id}/`);
+    },
+
+    // POST
+    createYouthStatus(data) {
         return apiRequest("/youth-status/", {
             method: "POST",
-            data: statusData
+            data
         });
     },
 
-    // PROFILE
-
-    createProfile(profileData) {
-        return apiRequest(
-            "/profiling-informations/",
-            {
-                method: "POST",
-                data: profileData
-            }
-        );
+    // PUT
+    updateYouthStatus(id, data) {
+        return apiRequest(`/youth-status/${id}/`, {
+            method: "PUT",
+            data
+        });
     },
 
-    getProfiles() {
-        return apiRequest(
-            "/profiling-informations/"
-        );
-    },
-
-    getProfile(id) {
-        return apiRequest(
-            `/profiling-informations/${id}/`
-        );
-    },
-
-    updateProfile(id, profileData) {
-        return apiRequest(
-            `/profiling-informations/${id}/`,
-            {
-                method: "PUT",
-                data: profileData
-            }
-        );
-    },
-
-    deleteProfile(id) {
-        return apiRequest(
-            `/profiling-informations/${id}/`,
-            {
-                method: "DELETE"
-            }
-        );
+    // DELETE
+    deleteYouthStatus(id) {
+        return apiRequest(`/youth-status/${id}/`, {
+            method: "DELETE"
+        });
     }
+
 };
 
-export default ProfilingAPI;
+export default KKAPI;

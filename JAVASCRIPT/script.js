@@ -1,3 +1,8 @@
+import { EventsAPI } from "./API_CALLS/eventsApi"
+import { MembersAPI } from "./API_CALLS/membersApi"
+import { ProfilingAPI } from "./API_CALLS/profilingApi"
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // --- View Elements ---
     const navItems = document.querySelectorAll('.nav-item');
