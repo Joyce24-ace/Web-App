@@ -1,3 +1,14 @@
+
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+
+/*loG in CSS*/
 * {
     margin: 0;
     padding: 0;
@@ -6,38 +17,73 @@
 }
 
 .login-bg {
-    
     background: #f0f2f5; 
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('../images/bg.png')
+    background: url('../images/bg.png') no-repeat center center/cover; 
+    padding: 20px 0;
 }
+
 
 .wrapper {
     display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
     width: 90%;
     max-width: 1100px;
-    justify-content: space-between;
-    align-items: center;
+    gap: 30px; 
+    margin: 20px auto;
 }
 
+
+@media (min-width: 992px) {
+    .wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
 
 .title-card {
     background: rgba(255, 255, 255, 0.9);
-    padding: 50px;
-    border-radius: 60px;
+    padding: 30px 20px; 
+    border-radius: 40px; 
     box-shadow: 15px 15px 30px rgba(0,0,0,0.15);
-    max-width: 550px;
+    width: 100%;
+    max-width: 550px; 
+    text-align: center; 
 }
 
+
 .title-card h1 {
-    font-size: 90px;
+    font-size: 45px; 
     font-weight: 900;
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: baseline;
-    gap: 15px;
+    gap: 10px;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+
+.title-card p {
+    font-size: 16px;
+    color: #555;
+}
+
+
+@media (min-width: 992px) {
+    .title-card h1 {
+        font-size: 90px; 
+        justify-content: flex-start;
+        gap: 15px;
+    }
+    .title-card p {
+        font-size: 22px;
+    }
 }
 
 .title-card h1 span {
@@ -55,12 +101,26 @@
 
 .login-card {
     background: #fff;
-    width: 380px;
-    padding: 40px;
-    border-radius: 45px;
+    width: 100%;
+    max-width: 380px;
+    padding: 35px 20px;
+    border-radius: 40px;
     box-shadow: 20px 20px 40px rgba(0,0,0,0.25);
     text-align: center;
 }
+
+@media (min-width: 992px) {
+    .title-card {
+        padding: 50px;
+        border-radius: 60px;
+        text-align: left;
+    }
+    .login-card {
+        border-radius: 45px;
+        padding: 40px 20px;
+    }
+}
+
 
 .logo-area img {
     width: 90px;
@@ -170,7 +230,6 @@
 .user-avatar i { font-size: 40px; color: #ddd; }
 
 
-
 .dashboard-wrapper {
     display: flex;
     padding: 20px;
@@ -203,6 +262,7 @@
 }
 
 .nav-item i { margin-right: 15px; width: 30px; }
+
 
 
 /* Main Content Area */
@@ -324,7 +384,7 @@
 
 
 
-/* --- YOUTH RECORDS FINAL DESIGN --- */
+/* --- YOUTH RECORDS DESIGN --- */
 
 
 #youth-profiles-content {
@@ -369,7 +429,6 @@
 .btn-add-youth { background-color: #4dabf7; }
 
 
-/* Filter Card: The White Box */
 .filter-card {
     background: white;
     padding: 25px;
@@ -449,7 +508,7 @@
     font-size: 0.9rem;
 }
 
-/* Action Icons */
+
 .view-icon { color: #339af0; margin-right: 12px; }
 .edit-icon { color: #40c057; margin-right: 12px; }
 .delete-icon { color: #fa5252; }
@@ -477,7 +536,6 @@
     outline: none;
 }
 
-/* end of youth records design */
 
 #add-event-form textarea.year-input {
     resize: none; 
@@ -490,8 +548,11 @@
     font-size: 0.9rem;
 }
 
+/*END YOUTH PROFILE DESIGN*/
 
-/* Settings Page Specific Layout */
+
+
+/* Settings Page DESIGN*/
 .view-container {
     display: none;
     flex: 1;
@@ -603,7 +664,7 @@ body.dark-theme {
 .dark-theme table { background-color: #2d2d2d; color: #fff; }
 .dark-theme th { background-color: #3d3d3d; color: #fff; }
 
-
+/*END OF SETTINGS*/
 
 
 
@@ -616,9 +677,7 @@ body.dark-theme {
 } /* important do not dlete */
 
 
-
-
-/* --- Org Chart Tree Connector Logic --- */
+/* ---ORGANIZATIONAL CHART--- */
 .org-chart-wrapper {
     width: 100%;
     overflow-x: auto;
@@ -641,7 +700,6 @@ body.dark-theme {
     text-align: center;
 }
 
-/* Horizontal connectors */
 .org-tree li::before, .org-tree li::after {
     content: '';
     position: absolute; top: 0; right: 50%;
@@ -660,7 +718,6 @@ body.dark-theme {
 .org-tree li:first-child::after { border-radius: 5px 0 0 0; }
 
 
-/* Vertical connector from parent */
 .org-tree ul ul::before {
     content: '';
     position: absolute; top: 0; left: 50%;
@@ -668,7 +725,6 @@ body.dark-theme {
     width: 0; height: 20px;
 }
 
-/* Card Styling */
 .org-card { 
     display: inline-block; 
     width: 90px;
@@ -712,7 +768,6 @@ body.dark-theme {
 .org-name { width: 100%; border: none; padding: 6px; text-align: center; color: #1a5276; font-weight: bold; }
 .org-role { display: block; background: #004a8d; color: #fff; font-size: 0.75rem; padding: 4px 0; }
 
-/* Update the member row list to display horizontally */
 .members-row ul {
     display: flex !important;
     flex-direction: row !important;
@@ -723,7 +778,10 @@ body.dark-theme {
 }
 
 
-/* This is for the confirming to log out*/
+
+
+/*LOGOUT DESIGN WARNING!!!!!!*/
+
         .modal-overlay {
             position: fixed;
             top: 0; left: 0;
@@ -736,7 +794,6 @@ body.dark-theme {
 
         }
         
-
        
         .modal-content {
             background-color: white;
@@ -758,13 +815,13 @@ body.dark-theme {
         }
 
         .modal-content p {
-            font-size: 1.2rem; /* Size of "You will be..." */
+            font-size: 1.2rem;
             color: #666; 
-            margin-bottom: 40px; /* Spacing before buttons */
+            margin-bottom: 40px; 
             line-height: 1.5; 
         }
 
-        /* 4. Button Container and Base Styles */
+    
         .modal-buttons {
             display: flex;
             gap: 20px; 
@@ -809,9 +866,10 @@ body.dark-theme {
             border-color: black;
         }
 
+/*ENDING LOG OUT DESIGN*/
 
 
-/* searchcss */
+/* SEARCHING ON PROFILES DESIGN*/
 .search-bar {
     position: relative;
     display: flex;
@@ -852,3 +910,4 @@ body.dark-theme {
     box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
 }
 
+/*END OF SEARCHING DESIGN*/
