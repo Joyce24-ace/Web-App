@@ -44,8 +44,6 @@ loginForm.addEventListener("submit", async (e) => {
             }
         }
 
-        alert("Login successful!");
-
         // Redirect after login
         window.location.href = "dashboard.html";
 
