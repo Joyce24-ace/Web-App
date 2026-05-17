@@ -30,15 +30,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const guideContent = document.getElementById('guide-content');
     const faqContent = document.getElementById('faq-content');
 
-    // --- Mock Database for Events ---
-    let eventsData = [
-        {
-            title: "Community Outreach Program",
-            date: "March 16, 2024",
-            img: "../images/outreach.jpg",
-            desc: "A collaboration with the students of Jugaban National High School together with SK Council."
-        }
-    ];
 
     // --- Sidebar Navigation Logic ---
     navItems.forEach(item => {
@@ -70,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+
     // --- Youth View Toggles ---
     if (btnAddNewYouth) {
         btnAddNewYouth.addEventListener('click', () => {
@@ -100,6 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (btnBackFromNewYear) btnBackFromNewYear.addEventListener('click', closeNewYearView);
     if (btnCancelYear) btnCancelYear.addEventListener('click', closeNewYearView);
 
+
+
     // --- Event View Toggles ---
     if (btnShowAddEvent) {
         btnShowAddEvent.addEventListener('click', () => {
@@ -115,6 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
             eventsView.style.display = 'block';
         });
     }
+
 
     // --- Settings Tab Logic (Now inside DOMContentLoaded) ---
     if (tabGuide && tabFaq) {
@@ -142,6 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
             faqContent.style.display = 'block';
         });
     }
+
 
     // --- Dynamic Event Rendering ---
     function renderEvents() {
@@ -182,7 +178,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Dark Mode Logic ---
+// --- Dark Mode Logic ---
 const darkModeToggle = document.getElementById('dark-mode-toggle');
 
 // Check for saved theme preference
@@ -233,7 +229,6 @@ if (darkModeToggle) {
     const editForm = document.getElementById('edit-member-form');
 
     // Function to open the modal and populate data
-    // Update the function signature to accept the 'icon' element
     window.openEditModal = (icon) => {
         // Find the specific node that was clicked
         currentEditingNode = icon.closest('.member-node');
